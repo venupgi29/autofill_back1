@@ -1,0 +1,28 @@
+{
+   "uFname":"Rafi",
+   "uLname":"Ahmed",
+   "uMname":"",
+   "uSuffix":"Jr",
+   "uAddr1":"sw 12th street",
+   "uAddr2":"Pembroke palms",
+   "uUnit":"21345",
+   "uCity":"pembroke pines",
+   "uState":"FL",
+   "uZip":"33027",
+   "uRtype":"Own",
+    "uAtype" :"Checking",
+   "uMortgage":"2300",
+   "uGincome":"12000",
+   "uSincome":"Employed",
+   "uEmployer":"HBO",
+   "uPhone":"2013445188",
+   "uMail":"rafi@rafi.com",
+   "uDOB":"09/07/1970",
+   "uSSNumber":"321904325",
+   "uMMname":"Noorunnisa",
+   "uAccount":"23409876",
+   "uAmount":"100000",
+   "cards":[
+      "https://creditcards.chase.com/a1/freedom-unlimited?clno=33dc5942-b0d0-495c-8e77-67882e416bc8"
+   ]
+}

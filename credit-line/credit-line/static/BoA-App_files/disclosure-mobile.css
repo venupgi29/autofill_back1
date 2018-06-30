@@ -1,0 +1,244 @@
+/*****************************************************************************************************************
+ * Mobile CSS
+ *****************************************************************************************************************/
+
+@media screen {
+    .showPrintOnly {
+        display: none;
+    }
+}
+
+.pagebreaktext {
+    font-family:Helvetica;
+    font-size:10pt;
+    width:77%;
+}
+
+body {
+    font-family: Helvetica;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.preamble {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.rossman {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 10pt;
+}
+
+#apr  {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.fedBoxHeader {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.fedBoxHeaderRow {
+    display: table-row;
+}
+
+.fedBoxHeaderCol {
+    background: black;
+    color: white;
+    display: table-cell;
+    border-bottom: 1px solid #000000;
+}
+
+.fedBoxTable {
+    display: table;
+    width: 100%;
+    font-size: 10pt;
+    vertical-align: top;
+}
+
+.fedBoxRow {
+    display: table-row;
+}
+
+.fedBoxColLeft {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    width: 30%;
+    padding:3px;
+}
+
+.fedBoxColRight {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding:3px;
+}
+
+.fedBoxSingleColumn {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    width: 30%;
+    padding:3px;
+}
+
+.feeBoxHeader {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.feeBoxHeaderRow {
+    display: table-row;
+}
+
+.feeBoxHeaderCol {
+    background: black;
+    color: white;
+    display: table-cell;
+    border-bottom: 1px solid #000000;
+}
+
+.feeBoxTable {
+    font-size: 10pt;
+    vertical-align: top;
+    display: table;
+    width: 100%;
+}
+
+.feeBoxRow {
+    display: table-row;
+}
+
+.feeBoxColLeft {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    width: 30%;
+    padding:3px;
+}
+
+.feeBoxColRight {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    padding:3px;
+}
+
+.feeBoxDivider {
+    border-bottom: 1px solid #000000;
+}
+
+.fedBoxDisclaimers {
+    font-size: 10pt;
+}
+
+.conditionsTable {
+    font-size: 10pt;
+    vertical-align: top;
+    display: table;
+    width: 100%;
+}
+
+.conditionsRow {
+    display: table-row;
+}
+
+.conditionsCol {
+    display: table-cell;
+}
+
+.termsAndConditions {
+    font-size: 8pt;
+}
+
+.feature {
+    font-size: 8pt;
+    padding-top: 5px;
+}
+
+.preSelectedOfferTitle {
+    font-size: 8pt;
+    padding-top: 5px;
+}
+
+.preSelectedHeader {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.preSelectedHeaderRow {
+    display: table-row;
+}
+
+.preSelectedHeaderCol {
+    display: table-cell;
+    font-size: 10pt;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.preSelectedTable {
+    font-size: 10pt;
+    vertical-align: top;
+    display: table;
+    width: 100%;
+}
+
+.preSelectedRow {
+    display: table-row;
+}
+
+.preSelectedColLeft {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    width: 30%;
+}
+
+.preSelectedColRight {
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.preSelectedDivider {
+    border-bottom: 1px solid #000000;
+}
+
+.preScreen {
+    font-size: 8pt;
+}
+
+.emailNotice {
+    font-size: 8pt;
+}
+
+.servicemark {
+    font-size: 6pt;
+}
+.preSelectedColFull{
+    display: table-cell;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}

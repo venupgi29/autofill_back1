@@ -1,0 +1,812 @@
+
+	<fieldset>
+		<legend>Financial information</legend>
+        <div class="form-group">
+		    <div class="row">
+				<div class="form-group col-sm-12 col-xs-12">
+					<label > <strong>Select type of accounts you own.</strong></label><br>			
+					<input type="checkbox" class="col-xs-2" name="Checking" value="Checking" id="uChecking">
+					<label for="uChecking" class="col-sm-2 col-xs-4"> Checking</label>
+					<input type="checkbox" class="col-xs-2" name="Savings" value="Savings" id="uSavings">
+					<label for="uSavings" class="col-sm-2 col-xs-4"> Savings</label>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uRtype" class="col-xs-6">Type of Residence <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control col-sm-2" id="uRtype" name="uRtype">
+							<option value="">
+								---
+							</option>
+							<option value="Rent">
+								Rent
+							</option>
+							<option value="Own">
+								Own
+							</option>
+							<option value="Parents">
+								Living with Parents
+							</option>
+							<option value="Relatives">
+								Living with Relatives
+							</option>
+							<option value="dormitory">
+								dormitory
+							</option>
+							<option value="Other">
+								Other
+							</option>
+						</select>
+					</div>
+				</div>	
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uMortgage" class="col-xs-6"> Monthly housing payment <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" type="text" name="uMortgage"  id="uMortgage"> 
+					</div>
+				</div>
+			</div>
+			<div class="row">			
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uYearAtAddr" class="col-xs-6">Residence Years <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-3">
+						<input class="form-control " id="uYearAtAddr" name="uYearAtAddr" type="text" placeholder="Years">
+					</div>
+					<div class="col-xs-3">
+						<input class="form-control " id="uMonAtAddr" name="uMonAtAddr" type="text" placeholder="Months">
+					</div>
+				</div>	
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uGincome" class="col-xs-6">Gross Annual Income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uGincome" name="uGincome" type="text">
+					</div>
+				</div>	
+			</div>
+			<hr>
+				<div class="row" style="padding-bottom:20px">
+					<label><strong>Loan Information</strong></label>
+				</div>
+			<div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uLoanAmount" class="col-xs-6">Loan Ammount <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control " id="uLoanAmount" name="uLoanAmount" type="text">
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uLoanFor" class="col-xs-6">Loan for <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control col-sm-2" id="uLoanFor" name="uLoanFor">
+							<option value="">---</option>
+							<option value="AUTOR">Auto Repair</option>
+							<option value="REFIN">Credit Card Refinancing</option>
+							<option value="DEBTC">Debt Consolidation</option>
+							<option value="HOMER">Home Remodel Or Repair</option>
+							<option value="MJRPR">Major Purchase</option>
+							<option value="MEDEX">Medical Expenses</option>
+							<option value="OTHER">Other</option>
+							<option value="PERSN">Personal</option>
+							<option value="TAXES">Taxes</option>
+							<option value="VACEN">Vacation</option>
+							<option value="WEDNG">Wedding</option>
+						</select>
+					</div>
+				</div>		
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-12 col-xs-12">
+					<label for="uloanduration" class="col-xs-6">Loan Duration <span style="color:red;fontsize:16px;">*</span></label>
+					<div class="col-xs-12">
+						<input class="form-control col-sm-2" value="36months" id="36months_" name="uloanduration" type="radio">
+						<label for="36months" class="col-sm-2">36months</label>
+						<input class="form-control col-sm-2" id="48months" value="48months_" name="uloanduration"  type="radio">
+						<label for="48months" class="col-sm-2">48months</label>
+						<input class="form-control col-sm-2" id="60months" value="60months_" name="uloanduration" type="radio">
+						<label for="60months" class="col-sm-2">60months</label>
+						<input class="form-control col-sm-2" id="72months" value="72months_" name="uloanduration" type="radio">
+						<label for="72months" class="col-sm-2">72months</label>
+						<input class="form-control col-sm-2" id="84months" value="84months_" name="uloanduration" type="radio">
+						<label for="84months" class="col-sm-2">84months</label>
+					</div>
+				</div>		
+			</div>
+		    <div class="row">
+				<div class="row">
+				<label ><strong style="padding:0 10px;"> Source of Income <span style="color:red;fontsize:16px;">*</span></strong> </label>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">		
+					<input type="checkbox" class="col-xs-2" name="uEmployed" value="Y" id="uEmployed" class="sourceofincome"onchange="Employed()">
+					<label for="uEmployed" class="col-sm-3 col-xs-4"> Employed</label>
+					<input type="checkbox" class="col-xs-2" name="uSelfEmployed" value="Y" id="uSelfEmployed" class="sourceofincome"onchange="SelfEmployed()">
+					<label for="uSelfEmployed" class="col-sm-3 col-xs-4"> Self Employed</label>
+					<input type="checkbox" class="col-xs-2" name="uOther" value="Y" id="uOther" class="sourceofincome" onchange="Other()">
+					<label for="uOther" class="col-sm-2 col-xs-4"> Other</label>
+					<input type="checkbox" class="col-xs-2" name="uUnemployed" value="Y" id="uUnemployed" onchange="Unemployed()" >
+					<label for="uUnemployed" class="col-sm-2 col-xs-4"> Unemployed</label>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uPrimarySourcesOfEmployment" class="col-xs-6">Primary Sources Of income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control col-sm-2" id="uPrimarySourcesOfEmployment" name="uPrimarySourcesOfEmployment">
+							<option value="">
+								---
+							</option>
+							<option value="Employed">
+								Employed
+							</option>
+							<option value="SelfEmployed">
+								SelfEmployed
+							</option>
+							<option value="Other">
+								Other
+							</option>
+							<option value="Unemployed">
+								Un Employed
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div id="Employed" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Employed Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployer" class="col-xs-6">Employer Name <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployer" name="uEmployer" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerAddr" class="col-xs-6">Employer Address <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerAddr" name="uEmployerAddr" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmploymentTitle" class="col-xs-6">Employment position or title <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmploymentTitle" name="uEmploymentTitle" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOccupation" class="col-xs-6">Occupation <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOccupation" name="uOccupation" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerPhone" class="col-xs-6">Employer Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerPhone" name="uEmployerPhone" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uStartDate" class="col-xs-6">Employment Start date <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uStartDate" name="uStartDate" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 uEndDate">
+						<label for="uEndDate" class="col-xs-6">Employment End date<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uEndDate" name="uEndDate" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 col-sm-offset-6 ucurrentEmployed">						
+						<input type="checkbox" class="col-sm-2 col-xs-2" name="ucurrentEmployed" value="Y" id="ucurrentEmployed" class="sourceofincome"onchange="currentEmployed()">
+						<label for="ucurrentEmployed" class="col-sm-8 col-xs-4"> I currently work here</label>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMsalary" class="col-xs-6">Monthly Gross Salary/Base Pay <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMsalary" name="uMsalary" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMOvertime" class="col-xs-6">Monthly overtime<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMOvertime" name="uMOvertime" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMCommission" class="col-xs-6">Monthly Commission<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMCommission" name="uMCommission" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<div class="row">
+							<label for="uMBonus" class="col-xs-6">Bonus<span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uMBonus" name="uMBonus" type="text">
+							</div>
+						</div>
+						<div class="row">
+							<label for="BonusTimePeriod" class="col-xs-6">Bonus Time Period<span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<select id="BonusTimePeriod" name="BonusTimePeriod" class="form-control col-sm-2" >
+									<option value=""> ---</option>
+									<option value="Annually">Annually</option>
+									<option value="Monthly">Monthly</option>
+									<option value="Weekly">Weekly</option>
+									<option value="BiWeekly">BiWeekly</option>
+									<option value="BiMonthly">BiMonthly</option>
+								</select>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerCity" class="col-xs-6">Employer City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerCity" name="uEmployerCity" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerState" class="col-xs-6">Employer State <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uEmployerState" name="uEmployerState" class="form-control col-sm-2" >
+								{% include  'states.html' %}
+							</select>
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerCountry" class="col-xs-6">Employer Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uEmployerCountry" name="uEmployerCountry" class="form-control col-sm-2" >
+							{% include 'countries.html' %}
+						</select></br>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerZip" class="col-xs-6">Employer ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerZip" name="uEmployerZip" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerStatus" class="col-xs-6">Employment Status <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<label for="ucitizen" class="col-sm-5 col-xs-11">Part Time</label>
+							<input class="form-control col-sm-2 col-xs-4" id="uEmployerStatusParttime" value="PT" name="uEmployerStatus" type="radio">
+							<label for="uPResident" class="col-sm-5 col-xs-11">Full Time</label>
+							<input class="form-control col-sm-2 col-xs-4" value="FT" id="uEmployerStatusFulltime" name="uEmployerStatus" type="radio">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerYears" class="col-xs-6">Employment Years <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-3">
+							<input class="form-control " id="uEmployerYears" name="uEmployerYears" type="text" placeholder="Years">
+						</div>
+						<div class="col-xs-3">
+							<input class="form-control " id="uEmployerMonths" name="uEmployerMonths" type="text" placeholder="Months">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uTotalExp" class="col-xs-6">Total Experience <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uTotalExp" name="uTotalExp" type="text" placeholder="Months">
+						</div>
+					</div>		
+				</div>
+				<hr>
+			</div>
+			<div id="SelfEmployed" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Self Employed Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessName" class="col-xs-6">Business Name <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessName" name="uBusinessName" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uNatureOfBusiness" class="col-xs-6">Nature Of Business <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uNatureOfBusiness" name="uNatureOfBusiness" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessStartDate" class="col-xs-6">Business Start date <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uBusinessStartDate" name="uBusinessStartDate" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 uBusinessEndDate">
+						<label for="uBusinessEndDate" class="col-xs-6">Business End date<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uBusinessEndDate" name="uBusinessEndDate" type="text">
+						</div>	
+					</div>
+					<div class="form-group col-sm-6 col-xs-12 col-sm-offset-6 ucurrentSelfEmployed">						
+						<input type="checkbox" class="col-sm-2 col-xs-2" name="ucurrentSelfEmployed" value="Y" id="ucurrentSelfEmployed" class="sourceofincome"onchange="currentSelfEmployed()">
+						<label for="ucurrentSelfEmployed" class="col-sm-8 col-xs-4"> I currently work here</label>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessOccupation" class="col-xs-6">Business Occupation <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control " id="uBusinessOccupation" name="uBusinessOccupation" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessInSameField" class="col-xs-6">Business In Field <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-3">
+							<input class="form-control " id="uBusinessYears" name="uBusinessYears" type="text" placeholder="Years">
+						</div>
+						<div class="col-xs-3">
+							<input class="form-control " id="uBusinessMonths" name="uBusinessMonths" type="text" placeholder="Months">
+						</div>
+					</div>			
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMonthlyBusinessPay" class="col-xs-6">Monthly Business Income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMonthlyBusinessPay" name="uMonthlyBusinessPay" type="text">
+						</div>
+					</div>				
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessPhone" class="col-xs-6">Business Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessPhone" name="uBusinessPhone" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">					
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uFinancialAffiliation" class="col-xs-6">Financial affiliation<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uFinancialAffiliation" name="uFinancialAffiliation" type="text" style="display">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uAccessibleIncome" class="col-xs-6">Accessible Income<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uAccessibleIncome" name="uAccessibleIncome" type="text" style="display">
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessAddr" class="col-xs-6">Business Address <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessAddr" name="uBusinessAddr" type="text">
+						</div>
+					</div>		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessCity" class="col-xs-6">Business City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessCity" name="uBusinessCity" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="row">		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnessState" class="col-xs-6">Business State <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnessState" name="uBusnessState" class="form-control col-sm-2" >
+								{% include  'states.html' %}
+							</select>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessCountry" class="col-xs-6">Business Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uBusinessCountry" name="uBusinessCountry" class="form-control col-sm-2" >
+							{% include 'countries.html' %}
+						</select></br>
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesZip" class="col-xs-6">ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesZip" name="uBusinesZip" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Additional Business Information</strong></label>
+				</div>				
+				<div class="row">		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnesslegal" class="col-xs-6">Business Legal Structure <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnesslegal" name="uBusnesslegal" class="form-control col-sm-2" >
+								<option value=""> -- </option>
+								<option value="Sole Proprietorship">Sole Proprietorship</option>
+								<option value="Corporation">Corporation</option>
+								<option value="Partnership">Partnership</option>
+								<option value="Non-Profit Corp">Non-Profit Corp</option>
+								<option value="Single-Member LLC">Single-Member LLC</option>
+								<option value="Multiple-Member LLC">Multiple-Member LLC</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessownership" class="col-xs-6">Business Ownership Type <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uBusinessownership" name="uBusinessownership" class="form-control col-sm-2" >
+							<option value=""> -- </option>
+							<option value="Publicly Traded ">Publicly Traded</option>
+							<option value="Majority/Wholly Government-Owned ">Majority/Wholly Government-Owned</option>
+							<option value="Privately Owned ">Privately Owned</option>
+						</select></br>
+						</div>
+					</div>	
+				</div>	
+				<div class="row">		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesTIN" class="col-xs-6">Business TAX ID Number (TIN)<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesTIN" name="uBusinesTIN" type="text">
+						</div>
+					</div>					
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessold" class="col-xs-6">How Old Is The Business?<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uBusinessold" name="uBusinessold" class="form-control col-sm-2" >
+							<option value=""> -- </option>
+							<option value="Less than 1 Year ">Less than 1 Year</option>
+							<option value="Between 1 and 2 Years ">Between 1 and 2 Years</option>
+							<option value="2-5 Years ">2-5 Years</option>
+							<option value="6-10 Years ">6-10 Years</option>
+							<option value="Greater than 10 Years ">Greater than 10 Years</option>
+
+						</select></br>
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnessindustry" class="col-xs-6">Industry Type <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnessindustry" name="uBusnessindustry" class="form-control col-sm-2" >
+								<option value=""> -- </option>
+								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
+								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
+								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
+								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
+								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
+								<option value="FinanceInsurance ">Finance and Insurance</option>
+								<option value="FoodApparel">Food and Apparel Manufacturing</option>
+								<option value="HealthCare">Health Care and Social Assistance</option>
+								<option value="Information">Information, Publishing and Broadcasting</option>
+								<option value="Management">Management of Companies and Enterprises (Holding Companies Managing Other Businesses)</option>
+								<option value="MetalandMachinery">Metal and Machinery Manufacturing</option>
+								<option value="Mining">Mining, Quarrying and Oil and Gas Extraction</option>
+								<option value="OperationalBusiness">Operational Business Services (Administrative, Telemarketing, Facilities &amp; Waste, Security)</option>
+								<option value="Professional">Professional, Scientific and Technical Services (i.e. Tax Preparation, Lawyer, Graphic Design)</option>
+								<option value="PublicAdministration ">Public Administration</option>
+								<option value="RealEstate">Real Estate and Rental and Leasing</option>
+								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
+								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
+								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
+								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
+								<option value="Utilities ">Utilities</option>
+								<option value="WholesaleMerchant ">Wholesale Merchant</option>
+								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row subcatagory" style="display:none;">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnesscategory" class="col-xs-6">Category <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnesscategory" name="uBusnesscategory" class="form-control col-sm-2" >
+								<option value=""> -- </option>
+								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
+								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
+								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
+								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
+								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
+								<option value="FinanceInsurance ">Finance and Insurance</option>
+								<option value="FoodApparel">Food and Apparel Manufacturing</option>
+								<option value="HealthCare">Health Care and Social Assistance</option>
+								<option value="Information">Information, Publishing and Broadcasting</option>
+								<option value="Management">Management of Companies and Enterprises (Holding Companies Managing Other Businesses)</option>
+								<option value="MetalandMachinery">Metal and Machinery Manufacturing</option>
+								<option value="Mining">Mining, Quarrying and Oil and Gas Extraction</option>
+								<option value="OperationalBusiness">Operational Business Services (Administrative, Telemarketing, Facilities &amp; Waste, Security)</option>
+								<option value="Professional">Professional, Scientific and Technical Services (i.e. Tax Preparation, Lawyer, Graphic Design)</option>
+								<option value="PublicAdministration ">Public Administration</option>
+								<option value="RealEstate">Real Estate and Rental and Leasing</option>
+								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
+								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
+								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
+								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
+								<option value="Utilities ">Utilities</option>
+								<option value="WholesaleMerchant ">Wholesale Merchant</option>
+								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnessSpeciality" class="col-xs-6">Specialty <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnessSpeciality" name="uBusnessSpeciality" class="form-control col-sm-2" >
+								<option value=""> -- </option>
+								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
+								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
+								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
+								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
+								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
+								<option value="FinanceInsurance ">Finance and Insurance</option>
+								<option value="FoodApparel">Food and Apparel Manufacturing</option>
+								<option value="HealthCare">Health Care and Social Assistance</option>
+								<option value="Information">Information, Publishing and Broadcasting</option>
+								<option value="Management">Management of Companies and Enterprises (Holding Companies Managing Other Businesses)</option>
+								<option value="MetalandMachinery">Metal and Machinery Manufacturing</option>
+								<option value="Mining">Mining, Quarrying and Oil and Gas Extraction</option>
+								<option value="OperationalBusiness">Operational Business Services (Administrative, Telemarketing, Facilities &amp; Waste, Security)</option>
+								<option value="Professional">Professional, Scientific and Technical Services (i.e. Tax Preparation, Lawyer, Graphic Design)</option>
+								<option value="PublicAdministration ">Public Administration</option>
+								<option value="RealEstate">Real Estate and Rental and Leasing</option>
+								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
+								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
+								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
+								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
+								<option value="Utilities ">Utilities</option>
+								<option value="WholesaleMerchant ">Wholesale Merchant</option>
+								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesSpend" class="col-xs-6">Business Spend per Month<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesSpend" name="uBusinesSpend" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesPrimary" class="col-xs-6">Business Primarly Based Country<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesPrimary" name="uBusinesPrimary" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesHQ" class="col-xs-6">Business Headquaters Country<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesHQ" name="uBusinesHQ" type="text">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusineslegalCountry" class="col-xs-6">Business Legally Formed Country<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusineslegalCountry" name="uBusineslegalCountry" type="text">
+						</div>
+					</div>	
+				</div>
+			</div>
+        	<div id="other" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Other Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPension" class="col-xs-6">Pension<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPension" name="uPension" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uRetirement" class="col-xs-6">Retirement<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uRetirement" name="uRetirement" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uDisablity" class="col-xs-6">Disablity<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uDisablity" name="uDisablity" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uSocialSecurity" class="col-xs-6">Social Security<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uSocialSecurity" name="uSocialSecurity" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uAlimony" class="col-xs-6">Alimony/Maintenance Income<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uAlimony" name="uAlimony" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uWorkerCompensation" class="col-xs-6">Worker's compensation<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uWorkerCompensation" name="uWorkerCompensation" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPublicAssistance" class="col-xs-6">Public Assistance<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPublicAssistance" name="uPublicAssistance" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uChildSupport" class="col-xs-6">Child Support<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uChildSupport" name="uChildSupport" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uRentalIncome" class="col-xs-6">Rental Income<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uRentalIncome" name="uRentalIncome" type="text">
+						</div>
+					</div>		
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome1" class="col-xs-6">Other monthly income1<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome1" name="uOtherMonthlyIncome1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource1" class="col-xs-6">Other monthly source1<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource1" name="uOtherMontylySource1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome2" class="col-xs-6">Other monthly income2<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome2" name="uOtherMonthlyIncome2" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource2" class="col-xs-6">Other monthly source2<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource2" name="uOtherMontylySource2" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome3" class="col-xs-6">Other monthly income3<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome3" name="uOtherMonthlyIncome3" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource3" class="col-xs-6">Other monthly source3<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource3" name="uOtherMontylySource3" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+			</div>
+			<div id="unemployed" style="display:none;">
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPreviousEmployer" class="col-xs-6"> Pervious Employer<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPreviousEmployer" name="uPreviousEmployer" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPreviousOccupation" class="col-xs-6">Previous Occupation <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPreviousOccupation" name="uPreviousOccupation" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+			</div>
+			<hr>		
+		</div>
+	</fieldset>
+<script type="text/javascript">
+
+function Employed()
+{
+    if($('#uEmployed').is(":checked"))   
+        $("#Employed").show();
+    else
+        $("#Employed").hide();
+	}
+	function currentEmployed()
+{
+    if($('#ucurrentEmployed').is(":checked"))   {
+        $(".uEndDate").hide();
+        $(".ucurrentEmployed").removeClass('col-sm-offset-6');}
+    else{
+        $(".uEndDate").show();
+        $(".ucurrentEmployed").addClass('col-sm-offset-6');}
+	}
+	function SelfEmployed()
+	{
+    if($('#uSelfEmployed').is(":checked"))   
+        $("#SelfEmployed").show();
+    else
+        $("#SelfEmployed").hide();
+	}
+	function currentSelfEmployed()
+	{	
+    if($('#ucurrentSelfEmployed').is(":checked"))  { 
+        $(".uBusinessEndDate").hide();
+        $(".ucurrentSelfEmployed").removeClass('col-sm-offset-6');		
+		}
+    else{
+        $(".uBusinessEndDate").show();
+        $(".ucurrentSelfEmployed").addClass('col-sm-offset-6');	
+		
+		}
+	}
+function Other()
+{
+    if($('#uOther').is(":checked"))   
+        $("#other").show();
+    else
+        $("#other").hide();
+	}
+function Unemployed()
+{
+    if($('#uUnemployed').is(":checked")) {
+$('input:checkbox[name=uOther]').attr('checked',false);	
+$('input:checkbox[name=uSelfEmployed]').attr('checked',false);	
+$('input:checkbox[name=uEmployed]').attr('checked',false);
+$('input:checkbox[name=uOther]').attr('disabled',true);	
+$('input:checkbox[name=uSelfEmployed]').attr('disabled',true);	
+$('input:checkbox[name=uEmployed]').attr('disabled',true);	
+$("#Employed").hide();
+$("#SelfEmployed").hide();
+$("#other").hide();	
+$("#unemployed").show();	}
+else{
+$('input:checkbox[name=uOther]').attr('disabled',false);
+$('input:checkbox[name=uSelfEmployed]').attr('disabled',false);	
+$('input:checkbox[name=uEmployed]').attr('disabled',false);	
+$("#unemployed").hide();	
+}}
+</script>

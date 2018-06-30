@@ -1,0 +1,85 @@
+	<fieldset>
+		<legend>Identity information</legend>
+        <div class="form-group">
+		    <div class="row">
+				<div class="form-group col-sm-12 col-xs-12">				
+					<label > <strong>Select type of Resident.<span style="color:red;fontsize:16px;">*</span></strong></label><br>
+					<input class="form-control col-sm-2 col-xs-4" value="Resident" id="uPResident_1" name="uResidentType_1" type="radio">
+					<label for="uPResident_1" class="col-sm-3 col-xs-11">Permanent Resident</label>
+					<input class="form-control col-sm-2 col-xs-4" id="uNonResident_1" value="NonResident" name="uResidentType_1"  type="radio">
+					<label for="uNonResident_1" class="col-sm-3 col-xs-11">Non Resident</label>
+					<input class="form-control col-sm-2 col-xs-4" id="ucitizen_1" value="Citizen" name="uResidentType_1" type="radio">
+					<label for="ucitizen_1" class="col-sm-3 col-xs-11">Citizen</label>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12 residentcountries" style="display:none;">
+					<label for="uCountryOfResidence_1" class="col-xs-5">Country of Residence <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select id="uCountryOfResidence_1" name="uCountryOfResidence_1" class="form-control col-sm-2"  >
+							{% include 'countries.html' %}
+						</select>
+					</div>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uIdType_1" class="col-xs-5">ID Type <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control" name="uIdType_1" id="uIdType_1" class="required">
+							<option value="">
+								---
+							</option>
+							<option value="DRIVERS_LICENSE">
+								DRIVERS LICENSE
+							</option>
+							<option value="PASSPORT">
+								PASSPORT
+							</option>
+							<option value="STATE_ID">
+								STATE ID
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uIdNo_1" class="col-xs-5">Id Number <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uIdNo_1" name="uIdNo_1" type="text" >
+					</div>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+				<label for="uIdState_1" class="col-xs-5">Issuing State <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select id="uIdState_1" name="uIdState_1" class="form-control col-sm-2" >
+							{% include 'states.html' %}
+						</select></br>
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uIdCountry_1" class="col-xs-5">Issuing Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select id="uIdCountry_1" name="uIdCountry_1" class="form-control col-sm-2" >
+							{% include 'countries.html' %}
+						</select></br>
+					</div>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uIdIssueDate_1" class="col-xs-5">Id Issue Date <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control datepicker" id="uIdIssueDate_1" name="uIdIssueDate_1" type="text" >
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uIdExpiryDate_1" class="col-xs-5">Id Expiry Date<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control datepicker" id="uIdExpiryDate_1" name="uIdExpiryDate_1" type="text" >
+					</div>
+				</div>
+			</div>
+        </div>
+	</fieldset>

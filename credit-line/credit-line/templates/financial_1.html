@@ -1,0 +1,571 @@
+
+	<fieldset>
+		<legend>Financial information</legend>
+        <div class="form-group">
+		    <div class="row">
+				<div class="form-group col-sm-12 col-xs-12">
+					<label > <strong>Select type of accounts you own.</strong></label><br>			
+					<input type="checkbox" class="col-xs-2" name="Checking_1" value="Checking" id="uChecking_1">
+					<label for="uChecking" class="col-sm-2 col-xs-4"> Checking</label>
+					<input type="checkbox" class="col-xs-2" name="Savings_1" value="Savings" id="uSavings_1">
+					<label for="uSavings" class="col-sm-2 col-xs-4"> Savings</label>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uRtype_1" class="col-xs-6">Type of Residence <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control col-sm-2" id="uRtype_1" name="uRtype_1">
+							<option value="">
+								---
+							</option>
+							<option value="Rent">
+								Rent
+							</option>
+							<option value="Own">
+								Own
+							</option>
+							<option value="Parents">
+								Living with Parents
+							</option>
+							<option value="Relatives">
+								Living with Relatives
+							</option>
+							<option value="dormitory">
+								dormitory
+							</option>
+							<option value="Other">
+								Other
+							</option>
+						</select>
+					</div>
+				</div>	
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uMortgage_1" class="col-xs-6"> Monthly housing payment <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" type="text" name="uMortgage_1"  id="uMortgage_1"> 
+					</div>
+				</div>
+			</div>
+			<div class="row">			
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uYearAtAddr_1" class="col-xs-6">Residence Years <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-3">
+						<input class="form-control " id="uYearAtAddr_1" name="uYearAtAddr_1" type="text" placeholder="Years">
+					</div>
+					<div class="col-xs-3">
+						<input class="form-control " id="uMonAtAddr_1" name="uMonAtAddr_1" type="text" placeholder="Months">
+					</div>
+				</div>	
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uGincome_1" class="col-xs-6">Gross Annual Income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uGincome_1" name="uGincome_1" type="text">
+					</div>
+				</div>	
+			</div>
+			<hr>
+		    <div class="row">
+				<div class="row">
+				<label ><strong style="padding:0 10px;"> Source of Income <span style="color:red;fontsize:16px;">*</span></strong> </label>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">		
+					<input type="checkbox" class="col-xs-2" name="uEmployed_1" value="Y" id="uEmployed_1" class="sourceofincome"onchange="Employed_1()">
+					<label for="uEmployed_1" class="col-sm-3 col-xs-4"> Employed</label>
+					<input type="checkbox" class="col-xs-2" name="uSelfEmployed_1" value="Y" id="uSelfEmployed_1" class="sourceofincome"onchange="SelfEmployed_1()">
+					<label for="uSelfEmployed_1" class="col-sm-3 col-xs-4"> Self Employed</label>
+					<input type="checkbox" class="col-xs-2" name="uOther_1" value="Y" id="uOther_1" class="sourceofincome" onchange="Other_1()">
+					<label for="uOther_1" class="col-sm-2 col-xs-4"> Other</label>
+					<input type="checkbox" class="col-xs-2" name="uUnemployed_1" value="Y" id="uUnemployed_1" onchange="Unemployed_1()" >
+					<label for="uUnemployed_1" class="col-sm-2 col-xs-4"> Unemployed</label>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uPrimarySourcesOfEmployment_1" class="col-xs-6">Primary Sources Of income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<select class="form-control col-sm-2" id="uPrimarySourcesOfEmployment_1" name="uPrimarySourcesOfEmployment_1">
+							<option value="">
+								---
+							</option>
+							<option value="Employed">
+								Employed
+							</option>
+							<option value="SelfEmployed">
+								SelfEmployed
+							</option>
+							<option value="Other">
+								Other
+							</option>
+							<option value="Unemployed">
+								Un Employed
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div id="Employed_1" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Employed Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployer_1" class="col-xs-6">Employer Name <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployer_1" name="uEmployer_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerAddr_1" class="col-xs-6">Employer Address <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerAddr_1" name="uEmployerAddr_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmploymentTitle_1" class="col-xs-6">Employment position or title <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmploymentTitle_1" name="uEmploymentTitle_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOccupation_1" class="col-xs-6">Occupation <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOccupation_1" name="uOccupation_1" type="text">
+						</div>
+					</div>	
+				</div>
+		<!--		<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmploymentTitle" class="col-xs-6">Employment Industry<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmploymentTitle" name="uEmploymentTitle" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOccupation" class="col-xs-6">Occupation <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOccupation" name="uOccupation" type="text">
+						</div>
+					</div>	
+				</div> -->
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerPhone_1" class="col-xs-6">Employer Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerPhone_1" name="uEmployerPhone_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uStartDate_1" class="col-xs-6">Employment Start date <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uStartDate_1" name="uStartDate_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 uEndDate_1">
+						<label for="uEndDate_1" class="col-xs-6">Employment End date<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uEndDate_1" name="uEndDate_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 col-sm-offset-6 ucurrentEmployed_1">						
+						<input type="checkbox" class="col-sm-2 col-xs-2" name="ucurrentEmployed_1" value="Y" id="ucurrentEmployed_1" class="sourceofincome"onchange="currentEmployed()">
+						<label for="ucurrentEmployed_1" class="col-sm-8 col-xs-4"> I currently work here</label>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMsalary_1" class="col-xs-6">Monthly Gross Salary/Base Pay <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMsalary_1" name="uMsalary_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMOvertime_1" class="col-xs-6">Monthly overtime<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMOvertime_1" name="uMOvertime_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMCommission_1" class="col-xs-6">Monthly Commission<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMCommission_1" name="uMCommission_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMBonus_1" class="col-xs-6">Bonus<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMBonus_1" name="uMBonus_1" type="text">
+						</div>
+					</div>					
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerCity_1" class="col-xs-6">Employer City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerCity_1" name="uEmployerCity_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerState_1" class="col-xs-6">Employer State <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uEmployerState_1" name="uEmployerState_1" class="form-control col-sm-2" >
+								{% include  'states.html' %}
+							</select>
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerCountry_1" class="col-xs-6">Employer Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uEmployerCountry_1" name="uEmployerCountry_1" class="form-control col-sm-2" >
+							{% include 'countries.html' %}
+						</select></br>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerZip_1" class="col-xs-6">Employer ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uEmployerZip_1" name="uEmployerZip_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerStatus_1" class="col-xs-6">Employment Status <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<label for="ucitizen_1" class="col-sm-5 col-xs-11">Part Time</label>
+							<input class="form-control col-sm-2 col-xs-4" id="uEmployerStatusParttime_1" value="PT" name="uEmployerStatus_1" type="radio">
+							<label for="uPResident_1" class="col-sm-5 col-xs-11">Full Time</label>
+							<input class="form-control col-sm-2 col-xs-4" value="FT" id="uEmployerStatusFulltime_1" name="uEmployerStatus_1" type="radio">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uEmployerYears_1" class="col-xs-6">Employment Years <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-3">
+							<input class="form-control " id="uEmployerYears_1" name="uEmployerYears_1" type="text" placeholder="Years">
+						</div>
+						<div class="col-xs-3">
+							<input class="form-control " id="uEmployerMonths_1" name="uEmployerMonths_1" type="text" placeholder="Months">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uTotalExp_1" class="col-xs-6">Total Experience <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uTotalExp_1" name="uTotalExp_1" type="text" placeholder="Months">
+						</div>
+					</div>		
+				</div>
+				<hr>
+			</div>
+			<div id="SelfEmployed_1" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Self Employed Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessName_1" class="col-xs-6">Business Name <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessName_1" name="uBusinessName_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uNatureOfBusiness_1" class="col-xs-6">Nature Of Business <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uNatureOfBusiness_1" name="uNatureOfBusiness_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessStartDate_1" class="col-xs-6">Business Start date <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uBusinessStartDate_1" name="uBusinessStartDate_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12 uBusinessEndDate_1">
+						<label for="uBusinessEndDate_1" class="col-xs-6">Business End date<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uBusinessEndDate_1" name="uBusinessEndDate_1" type="text">
+						</div>	
+					</div>
+					<div class="form-group col-sm-6 col-xs-12 col-sm-offset-6 ucurrentSelfEmployed_1">						
+						<input type="checkbox" class="col-sm-2 col-xs-2" name="ucurrentSelfEmployed_1" value="Y" id="ucurrentSelfEmployed_1" class="sourceofincome"onchange="currentSelfEmployed_1()">
+						<label for="ucurrentSelfEmployed_1" class="col-sm-8 col-xs-4"> I currently work here</label>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessOccupation_1" class="col-xs-6">Business Occupation <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control " id="uBusinessOccupation_1" name="uBusinessOccupation_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessInSameField_1" class="col-xs-6">Business In Field <span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-3">
+							<input class="form-control " id="uBusinessYears_1" name="uBusinessYears_1" type="text" placeholder="Years">
+						</div>
+						<div class="col-xs-3">
+							<input class="form-control " id="uBusinessMonths_1" name="uBusinessMonths_1" type="text" placeholder="Months">
+						</div>
+					</div>			
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uMonthlyBusinessPay_1" class="col-xs-6">Monthly Business Income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uMonthlyBusinessPay_1" name="uMonthlyBusinessPay_1" type="text">
+						</div>
+					</div>				
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessPhone_1" class="col-xs-6">Business Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessPhone_1" name="uBusinessPhone_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessAddr_1" class="col-xs-6">Business Address <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessAddr_1" name="uBusinessAddr_1" type="text">
+						</div>
+					</div>		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessCity_1" class="col-xs-6">Business City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinessCity_1" name="uBusinessCity_1" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="row">		
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusnessState_1" class="col-xs-6">Business State <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">							
+							<select id="uBusnessState_1" name="uBusnessState_1" class="form-control col-sm-2" >
+								{% include  'states.html' %}
+							</select>
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinessCountry_1" class="col-xs-6">Business Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+						<select id="uBusinessCountry_1" name="uBusinessCountry_1" class="form-control col-sm-2" >
+							{% include 'countries.html' %}
+						</select></br>
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uBusinesZip_1" class="col-xs-6">ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uBusinesZip_1" name="uBusinesZip_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+			</div>
+        	<div id="other_1" style="display:none;">
+				<div class="row" style="padding-bottom:20px">
+					<label style="margin:0 30px;border-bottom:2px solid #3333;"><strong>Other Income Sorce</strong></label>
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPension_1" class="col-xs-6">Pension<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPension_1" name="uPension_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uRetirement_1" class="col-xs-6">Retirement<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uRetirement_1" name="uRetirement_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uDisablity_1" class="col-xs-6">Disablity<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uDisablity_1" name="uDisablity_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uSocialSecurity_1" class="col-xs-6">Social Security<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uSocialSecurity_1" name="uSocialSecurity_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uAlimony_1" class="col-xs-6">Alimony/Maintenance Income<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uAlimony_1" name="uAlimony_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uWorkerCompensation_1" class="col-xs-6">Worker's compensation<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uWorkerCompensation_1" name="uWorkerCompensation_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPublicAssistance_1" class="col-xs-6">Public Assistance<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPublicAssistance_1" name="uPublicAssistance_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uChildSupport_1" class="col-xs-6">Child Support<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uChildSupport_1" name="uChildSupport_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uRentalIncome_1" class="col-xs-6">Rental Income<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uRentalIncome_1" name="uRentalIncome_1" type="text">
+						</div>
+					</div>		
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome1_1" class="col-xs-6">Other monthly income1<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome1_1" name="uOtherMonthlyIncome1_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource1_1" class="col-xs-6">Other monthly source1<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource1_1" name="uOtherMontylySource1_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome2_1" class="col-xs-6">Other monthly income2<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome2_1" name="uOtherMonthlyIncome2_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource2_1" class="col-xs-6">Other monthly source2<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource2_1" name="uOtherMontylySource2_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMonthlyIncome3_1" class="col-xs-6">Other monthly income3<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMonthlyIncome3_1" name="uOtherMonthlyIncome3_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uOtherMontylySource3_1" class="col-xs-6">Other monthly source3<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uOtherMontylySource3_1" name="uOtherMontylySource3_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+			</div>
+			<div id="unemployed_1" style="display:none;">
+				<div class="row">	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPreviousEmployer_1" class="col-xs-6"> Pervious Employer<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPreviousEmployer_1" name="uPreviousEmployer_1" type="text">
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPreviousOccupation_1" class="col-xs-6">Previous Occupation <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPreviousOccupation_1" name="uPreviousOccupation_1" type="text">
+						</div>
+					</div>	
+				</div>
+				<hr>
+			</div>
+			<hr>		
+		</div>
+	</fieldset>
+<script type="text/javascript">
+
+function Employed_1()
+{
+    if($('#uEmployed_1').is(":checked"))   
+        $("#Employed_1").show();
+    else
+        $("#Employed_1").hide();
+	}
+	function currentEmployed_1()
+{
+    if($('#ucurrentEmployed_1').is(":checked"))   {
+        $(".uEndDate_1").hide();
+        $(".ucurrentEmployed_1").removeClass('col-sm-offset-6');}
+    else{
+        $(".uEndDate_1").show();
+        $(".ucurrentEmployed_1").addClass('col-sm-offset-6');}
+	}
+	function SelfEmployed_1()
+	{
+    if($('#uSelfEmployed_1').is(":checked"))   
+        $("#SelfEmployed_1").show();
+    else
+        $("#SelfEmployed_1").hide();
+	}
+	function currentSelfEmployed_1()
+	{	
+    if($('#ucurrentSelfEmployed_1').is(":checked"))  { 
+        $(".uBusinessEndDate_1").hide();
+        $(".ucurrentSelfEmployed_1").removeClass('col-sm-offset-6');		
+		}
+    else{
+        $(".uBusinessEndDate_1").show();
+        $(".ucurrentSelfEmployed_1").addClass('col-sm-offset-6');	
+		
+		}
+	}
+function Other_1()
+{
+    if($('#uOther_1').is(":checked"))   
+        $("#other_1").show();
+    else
+        $("#other_1").hide();
+	}
+function Unemployed()
+{
+    if($('#uUnemployed_1').is(":checked")) {
+$('input:checkbox[name=uOther_1]').attr('checked',false);	
+$('input:checkbox[name=uSelfEmployed_1]').attr('checked',false);	
+$('input:checkbox[name=uEmployed_1]').attr('checked',false);
+$('input:checkbox[name=uOther_1]').attr('disabled',true);	
+$('input:checkbox[name=uSelfEmployed_1]').attr('disabled',true);	
+$('input:checkbox[name=uEmployed_1]').attr('disabled',true);	
+$("#Employed_1").hide();
+$("#SelfEmployed_1").hide();
+$("#other_1").hide();	
+$("#unemployed_1").show();	}
+else{
+$('input:checkbox[name=uOther_1]').attr('disabled',false);
+$('input:checkbox[name=uSelfEmployed_1]').attr('disabled',false);	
+$('input:checkbox[name=uEmployed_1]').attr('disabled',false);	
+$("#unemployed_1").hide();	
+}}
+</script>

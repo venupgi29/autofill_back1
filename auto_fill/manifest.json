@@ -1,0 +1,363 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Fill",
+  "description": "...",
+  "version": "1.0",
+  "web_accessible_resources": [
+     
+    "js/*.js",
+    "js/*.json"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "cookies",
+    "tabs",
+    "activeTab",
+    "storage",
+    "browsingData"
+  ],
+  "options_page": "html/options.html",
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "Auto Fill",
+    "default_popup": "html/home.html"
+  },
+  "icons": {
+    "128": "img/icon128.png"
+  },
+  "author": [
+    {
+      "name": "Rafi Ahmed",
+      "email": "rafiahmed403@gmail.com"
+    }
+  ],
+ 
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chase.com/*",
+          
+         
+         
+          "*://*.barclaycardus.com/*",
+          "*://*.americanexpress.com/*",
+          "*://*.bankofamerica.com/*"
+       
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/chase.js",
+        "js/test.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "*://*.discovercard.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/discovercard.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+      "matches": [
+       "*://*.marcus.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/marcus.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+      "matches": [
+       "*://*.statefarm.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/statefarm.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+    {
+      "matches": [
+       "*://*.citicards.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/citi.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+      "matches": [
+       "*://*.discover.com/*","*://*.discoverpersonalloans.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/discover.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    { 
+      "matches": [
+       "*://*.capitalone.com/*",
+       "*://*.applynow.capitalone.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/capital.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+      "matches": [
+       "*://*.navyfederal.org/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/navyfed/navyfed.js"
+      ],
+      "permissions": [
+        "<all_urls>","tabs"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+    {
+      "matches": [
+       "*://*.bankofamerica.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/boa.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+
+        
+      "matches": [
+       "*://*.sofi.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/sofi_registration.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+    {
+
+        
+      "matches": [
+       "*://*.tdbank.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/tdbbank.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+  
+        {
+
+        
+      "matches": [
+       "*://*.firsttechfed.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/firsttech.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+  
+    { 
+      "matches": [
+       "*://*.wf.com/*",
+       "*://*.wellsfargo.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/wf.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    }
+ 
+  // end for one url
+
+
+  ]
+}

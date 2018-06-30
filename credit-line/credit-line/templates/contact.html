@@ -1,0 +1,57 @@
+
+	<fieldset>
+		<legend>Contact information</legend>
+        <div class="form-group">
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uPhone" class="col-xs-5">Phone<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uPhone" name="uPhone" type="text">
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uPhoneType" class="col-xs-5">Phone Type<span class="pull-right">:</span> </label>
+					<div class="col-xs-6">
+						<select class="form-control col-xs-12" id="uPhoneType" name="uPhoneType" value="Mobile Type">
+							<option value="">
+								---
+							</option>
+							<option value="Mobile">
+								Mobile
+							</option>
+							<option value="Home">
+								Home
+							</option>
+							<option value="Work">
+								Work
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uMail" class="col-xs-5"> Email<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control col-xs-3" id="uMail" name="uMail" type="mail">
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uSSNumber" class="col-xs-5">SSN<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uSSNumber" name="uSSNumber" type="text">
+					</div>
+				</div>
+			</div>
+		    <div class="row">
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uDOB" class="col-xs-5">Date of Birth<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uDOB" name="uDOB" type="date" data-date="" data-date-format="MM DD  YYYY">
+					</div>
+				</div>
+		    </div>
+        </div>
+	</fieldset>
+<script>var dateControl = document.querySelector('input[type="date"]');
+dateControl.value = '06-25-2018';</script>

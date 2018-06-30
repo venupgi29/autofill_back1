@@ -1,0 +1,264 @@
+{
+  "manifest_version": 2,
+  "name": "Auto Fill",
+  "description": "...",
+  "version": "1.0",
+  "permissions": [
+    "background",
+    "tabs",
+    "activeTab",
+    "storage",
+    "browsingData"
+  ],
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "html/home.html"
+  },
+  "icons": {
+    "128": "img/icon128.png"
+  },
+  "author": [
+    {
+      "name": "Rafi Ahmed",
+      "email": "rafiahmed403@gmail.com"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+    // "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chase.com/*"
+          /*
+          "*://*.discovercard.com/*",
+          "*://*.statefarm.com/*",
+          "*://*.capitalone.com/*",
+          "*://*.wellsfargo.com/*",
+          "*://*.barclaycardus.com/*",
+          "*://*.americanexpress.com/*",
+          "*://*.bankofamerica.com/*",
+        "*://*.citicards.com/*" */
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/chase.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+    /*
+    //  Bank Of America
+    */
+
+    {
+      "matches": [
+       "*://*.bankofamerica.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/boa.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+    /*
+    // Pen Fed
+    */
+
+    /*
+    // Citi Cards
+    */
+
+       {
+      "matches": [
+       "*://*.citicards.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/citi.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+
+      /*
+    // Discover Cards
+    */
+
+       {
+      "matches": [
+       "*://*.discovercard.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/discover.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+     /*
+    // American Express
+    */
+
+       {
+      "matches": [
+       "*://*.americanexpress.com/**"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/amex.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+      /*
+    // Wells Fargo
+    */
+
+       {
+      "matches": [
+       "*://*.wellsfargo.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/wells.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+       /*
+    // Wells Fargo
+    */
+
+       {
+      "matches": [
+       "*://*.barclaycardus.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/barclays.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+         /*
+    // Wells Fargo
+    */
+
+       {
+      "matches": [
+       "*://*.capitalone.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/capital.js"
+      ],
+      "permissions": [
+        "http://localhost:8000"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    }
+
+
+  ]
+}

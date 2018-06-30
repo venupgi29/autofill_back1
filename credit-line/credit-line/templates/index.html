@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Credit Line Master Application Form</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+		<style>
+			label{padding: 5px 0px;}
+			input[type=checkbox], input[type=radio] {width:15px;height: 25px;}
+			body{background: #e4d5d533;}
+			label,input{font-weight: 400;}
+			.wrap {margin: 10px auto 0; }
+			#steps { margin: 80px 0 0 0 }
+			.commands { overflow: hidden; margin-top: 30px; }
+			.prev {float:left}
+			.next, .submit {float:right}
+			.error { color: #b33; }
+			#progress { position: relative; height: 5px; background-color: #eee; margin-bottom: 20px; }
+			#progress-complete { border: 0; position: absolute; height: 5px; min-width: 10px; background-color: #337ab7; transition: width .2s ease-in-out; }
+			.ui-datepicker-year,.ui-datepicker-month{color:#333;}
+		</style>
+	</head>
+	<body>
+		<div class="row" style="background:#fff;border-bottom:1px solid;">
+			<div class="col-sm-12 text-center" style="padding:20px;">
+				<h4 style="font-family: -webkit-body;">Current Application Form ID Number:&nbsp &nbsp <strong><span id="number" style="color:#145790;"></span></strong> </h4>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row wrap">
+				<div class="col-lg-12">
+					<div id='progress'>
+						<div id='progress-complete'></div>
+					</div>
+					<form id="SignupForm" action="/saveMasterForm" method="post">
+						{% include 'personal.html' %}
+						{% include 'identity.html' %}
+					-->	{% include 'financial.html' %}
+					<!--	
+						<fieldset>
+							<legend>Residential information</legend>
+							<div class="form-group">
+							<label for="CompanyName">Company Name</label>
+							<input id="CompanyName" name="company-name" type="text" class="form-control" required />
+							</div>
+						</fieldset>
+						<fieldset>
+							<legend>Employment information</legend>
+							<div class="form-group">
+							<label for="EmployerName">Company Name</label>
+							<input id="EmployerName" name="company-name" type="text" class="form-control" required />
+							</div>
+						</fieldset>  -->
+						<input type="hidden" name="clientId" id="clientId" value="">
+						<button id="SaveAccount" type="submit" class="btn btn-primary submit">Submit form</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="/script.js"></script>
+    <script>
+        $( function() {
+			$("input[value$='NonResident']").click(function() {
+				$("div.residentcountries").show();
+			});
+			$("input[value$='Resident']").click(function() {
+				$("div.residentcountries").show();
+			});
+			$("input[value$='Citizen']").click(function() {
+				$("div.residentcountries").hide();
+			});
+			$('#uSincome').change(function(){
+				var divID = $(this).children('option:selected').attr('value');
+				if(divID == 'Employed'){
+					$('#Employed').show();
+				   }
+				else{
+					  $('#Employed').hide("slow");
+				   }
+			});
+		});
+        $( function() {
+		jQuery.validator.addMethod("exp", function(value, element) {
+			return this.optional(element) || /^[0-9\s.\-]+$/i.test(value);
+		}, "Numbers and '.' only please");
+		
+		
+		jQuery.validator.addMethod("title", function(value, element) {
+			return this.optional(element) || /^[a-zA-Z\s.\-]+$/i.test(value);
+		}, "Letters and '.' only please");
+		
+		
+		jQuery.validator.addMethod("alphanumeric", function(value, element) {
+			return this.optional(element) || /^[\w.]+$/i.test(value);
+		}, "Letters and numbers only please");
+		
+		
+		jQuery.validator.addMethod("endDate", function(value, element) {
+            var startDate = $('#uIdIssueDate').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "Expiry date must be after Issue date");
+		jQuery.validator.addMethod("empendDate", function(value, element) {
+            var startDate = $('#uStartDate').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "End date must be after Starting date");
+		jQuery.validator.addMethod("BusinessendDate", function(value, element) {
+            var startDate = $('#uBusinessEndDate').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "End date must be after Starting date");
+		
+		
+		jQuery.validator.addMethod("endDate1", function(value, element) {
+            var startDate = $('#uIdIssueDate_1').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "Expiry date must be after Issue date");
+		jQuery.validator.addMethod("empendDate1", function(value, element) {
+            var startDate = $('#uStartDate_1').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "End date must be after Starting date");
+		jQuery.validator.addMethod("empendDate11", function(value, element) {
+            var startDate = $('#uBusinessEndDate_1').val();
+            return Date.parse(startDate) <= Date.parse(value) || value == "";
+		}, "End date must be after Starting date");
+		
+		
+		jQuery.validator.addMethod("lettersonly", function(value, element) {
+		  return this.optional(element) || /^[a-zA-Z\s]+$/i.test(value);
+		}, "Letters only please"); 
+		jQuery.validator.addMethod("numberonly", function(value, element) {
+		  return this.optional(element) || /^[0-9]+$/i.test(value);
+		}, "Numbers only please"); 
+		jQuery.validator.addMethod("mail", function(value, element) {
+		  return this.optional(element) || /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/i.test(value);
+		},"Enter Valid Mail Id");
+		jQuery.validator.addMethod("mobile", function(value, element) {
+		  return this.optional(element) || /^[1-9]\d{9}$/i.test(value);
+		}, "Mobile Number must not start with 0 and must be 10 digits "); 
+		jQuery.validator.addMethod("zip", function(value, element) {
+		  return this.optional(element) || /^[1-9]\d{4}$/i.test(value);
+		}, "ZIP Code must not start with 0 and must be 5 digits ");
+		jQuery.validator.addMethod("ssn", function(value, element) {
+		  return this.optional(element) || /^[1-9]\d{8}$/i.test(value);
+		}, "SSN Code must not start with 0 and must be 9 digits "); 
+		
+            var $signupForm = $( '#SignupForm' );
+            
+            $signupForm.validate({
+			   rules: {
+					uLoanAmount:		{required: true,numberonly: true},
+					uLoanFor:	 		{required: true},
+					uloanduration: 		{required: true},
+					uResidentType: 		{required: true},
+					uIdNo: 				{required: true,alphanumeric: true},
+					uIdType: 			{required: true },
+					uIdState: 			{required: true},
+					uIdCountry: 		{required: true},
+					uIdIssueDate:		{required: true},
+					uIdExpiryDate:		{required: false,endDate: true},
+					uCountryOfResidence:{required: true},
+					uFname: 			{required: true,lettersonly: true},
+					uMname: 			{required: false,lettersonly: true,maxlength:1},
+					uLname: 			{required: true,lettersonly: true},
+					uSuffix: 			{required: false},
+					uHomePhone: 		{numberonly: true,mobile: true },
+					uMobilePhone:		{numberonly: true,mobile: true },
+					uWorkPhone: 		{numberonly: true,mobile: true},
+					uPreferredPhone: 	{required: true},
+					uAddr1:				{required: true},
+					uUnit: 				{required: true},
+					uCity: 				{required: true,lettersonly: true},
+					uState: 			{required: true},
+					uCountry: 			{required: true},	
+					uZip: 				{required: true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uEmargancyFname: 	{required: true,lettersonly: true},
+					uEmargancyMname: 	{required: false,lettersonly: true,maxlength:1},
+					uEmargancyLname: 	{required: true,lettersonly: true},
+					uEmargancyAddr: 	{required: true},
+					uEmargancyCity: 	{required: true,lettersonly: true},
+					uEmargancyState: 	{required: true},
+					uEmargancyCountry: 	{required: true},
+					uEmargancyZip: 		{required: true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uMAddr1: 			{required: true},
+					uMUnit: 			{required: true},
+					uMCity: 			{required: true,lettersonly: true},
+					uMState:			{required:true},
+					uMCountry:			{required:true},
+					uMZip:				{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					check:				{required:false,},
+					uRtype:				{required:true},
+					uMortgage:			{required:true,numberonly: true},
+					uGincome:			{required:true,numberonly: true},
+					uYearAtAddr:		{required:true,numberonly: true},
+					uMonAtAddr:			{required:true,numberonly: true,range: [0,11]},
+					uSincome:			{required:true},
+					uEmployer:			{required:true,lettersonly: true},
+					uEmployerAddr:		{required:true},
+					uEmploymentTitle:	{required:true,title: true},
+					uOccupation:		{required:true,lettersonly: true},
+					uEmployerPhone:		{required:true,numberonly: true,mobile: true,minlength:10,maxlength:10},
+					uStartDate:			{required:true},
+					uEndDate:			{required:true,empendDate: true},
+					uMsalary:			{required:true,numberonly: true},
+					uMOvertime:			{required:false,numberonly: true},
+					uMCommission:		{required:false,numberonly: true},
+					uMBonus:			{required:false,numberonly: true},
+					uEmployerCity:		{required:true,lettersonly: true},
+					uEmployerState:		{required:true},
+					uEmployerCountry:	{required:true},
+					uEmployerZip:		{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uEmployerStatus:	{required:true},
+					uEmployerYears:		{required:true,numberonly: true},
+					uEmployerMonths:	{required:true,numberonly: true,range: [0,11]},
+					uTotalExp:			{required:true,exp: true},
+					uPrimarySourcesOfEmployment:{required:true},
+					uBusinessName:		{required:true},
+					uNatureOfBusiness:	{required:true,lettersonly: true},
+					uBusinessStartDate:	{required:true,},
+					uBusinessEndDate:	{BusinessendDate:true},
+					uBusinessOccupation:{required:true},
+					uBusinessYears:		{required:true},
+					uBusinessMonths:	{required:true,range: [0,11]},
+					uMonthlyBusinessPay:{required:true,numberonly: true},
+					uBusinessPhone:		{required:true,mobile: true},
+					uFinancialAffiliation:{lettersonly:true,},
+					uAccessibleIncome:	{numberonly:true,},
+					uBusinessAddr:		{required:true,},
+					uBusinessCity:		{required:true,lettersonly: true},
+					uBusnessState:		{required:true},
+					uBusinessCountry:	{required:true},
+					uBusinesZip:		{required:true,zip: true,minlength:5,maxlength:5},
+					uBusnesslegal:		{required:true},
+					uBusinessownership:	{required:true},
+					uBusinesTIN:		{required:true,numberonly:true,minlength:10,maxlength:10},
+					uBusnessindustry:	{required:true},
+					uBusinesSpend:		{required:true,numberonly:true},
+					uBusinesHQ:			{required:true,lettersonly:true},
+					uBusineslegal:		{required:true,lettersonly:true},
+					uBusinesPrimary:	{required:true,lettersonly:true},
+					
+					
+					
+					uPension:			{numberonly:true},
+					uRetirement:		{numberonly:true},
+					uDisablity:			{numberonly:true},
+					uSocialSecurity:	{numberonly:true},
+					uAlimony:			{numberonly:true},
+					uWorkerCompensation:{numberonly:true},
+					uPublicAssistance:	{numberonly:true},
+					uChildSupport:		{numberonly:true},
+					uRentalIncome:		{numberonly:true},
+					uOtherMonthlyIncome1:{numberonly:true},
+					uOtherMonthlyIncome2:{numberonly:true},
+					uOtherMonthlyIncome3:{numberonly:true},
+					uOtherMontylySource1:{lettersonly:true},
+					uOtherMontylySource2:{lettersonly:true},
+					uOtherMontylySource3:{lettersonly:true},
+					uPhone:				{required:true,numberonly: true,mobile: true,minlength:10,maxlength:10},
+					uPhoneType:			{required:true},uMail:{required:true,mail: true},
+					uSSNumber:			{required:true,minlength:9,maxlength:9},
+					uDOB:				{required:true},
+					uMMname:			{required:true,lettersonly: true},
+					uIdNo_1:			{required:true,alphanumeric: true},
+					uIdType_1:			{required:true},
+					uIdState_1:			{required:true},
+					uIdCountry_1:		{required:true},
+					uIdIssueDate_1:		{required:true},
+					uIdExpiryDate_1:	{required:false,endDate1: true},
+					uCountryOfResidence_1:{required:true},
+					uFname_1:			{required:true,lettersonly: true},
+					uMname_1:			{required:false,lettersonly: true,maxlength:1},
+					uLname_1:			{required:true,lettersonly: true},
+					uSuffix_1:			{required:false},
+					uHomePhone_1:		{numberonly:true,mobile: true},
+					uMobilePhone_1:		{numberonly:true,mobile: true},
+					uWorkPhone_1:		{numberonly:true,mobile: true},
+					uPreferredPhone_1:	{required:true},
+					uAddr1_1:			{required:true},
+					uUnit_1:			{required:true},
+					uCity_1:			{required:true,lettersonly: true},
+					uState:				{required:true},
+					uCountry_1:			{required:true},
+					uZip_1:				{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uEmargancyFname_1:	{required:true,lettersonly: true},
+					uEmargancyMname_1:	{required:false,lettersonly: true,maxlength:1},
+					uEmargancyLname_1:	{required:true,lettersonly: true},
+					uEmargancyAddr_1:	{required:true},
+					uEmargancyCity_1:	{required:true,lettersonly: true},
+					uEmargancyState_1:	{required:true},
+					uEmargancyCountry_1:{required:true},
+					uEmargancyZip_1:	{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uMAddr1_1:			{required:true},
+					uMUnit_1:			{required:true},
+					uMCity_1:			{required:true,lettersonly: true},
+					uMState_1:			{required:true},
+					uMCountry_1:		{required:true},
+					uMZip_1:			{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},check_1:{required:false,},
+					uRtype_1:			{required:true},
+					uMortgage_1:		{required:true,numberonly: true},
+					uGincome_1:			{required:true,numberonly: true},
+					uYearAtAddr_1:		{required:true,numberonly: true},
+					uMonAtAddr_1:		{required:true,numberonly: true,range: [0,11]},
+					uSincome_1:			{required:true},
+					uEmployer_1:		{required:true,lettersonly: true},
+					uEmployerAddr_1:	{required:true},
+					uEmploymentTitle_1:	{required:true,title: true},
+					uOccupation_1:		{required:true,lettersonly: true},
+					uEmployerPhone_1:	{required:true,numberonly: true,mobile: true,minlength:10,maxlength:10},
+					uStartDate_1:		{required:true},
+					uEndDate_1:			{required:true,empendDate1: true},
+					uMsalary_1:			{required:true,numberonly: true},
+					uMOvertime_1:		{required:false,numberonly: true},
+					uMCommission_1:		{required:false,numberonly: true},
+					uMBonus_1:			{required:false,numberonly: true},
+					uEmployerCity_1:	{required:true,lettersonly: true},
+					uEmployerState_1:	{required:true},
+					uEmployerCountry_1:	{required:true},
+					uEmployerZip_1:		{required:true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uEmployerStatus_1:	{required:true},
+					uEmployerYears_1:	{required:true,numberonly: true},
+					uEmployerMonths_1:	{required:true,numberonly: true,range: [0,11]},
+					uTotalExp_1:		{required:true,exp: true},
+					uPrimarySourcesOfEmployment_1:{required:true},
+					uBusinessName_1:	{required:true},
+					uNatureOfBusiness_1:{required:true,lettersonly: true},
+					uBusinessStartDate_1:{required:true,},
+					uBusinessEndDate_1:	{empendDate11:true},
+					uBusinessYears_1:	{required:true},
+					uBusinessMonths_1:	{required:true,range: [0,11]},
+					uMonthlyBusinessPay_1:{required:true,numberonly: true},
+					uBusinessPhone_1:	{required:true,mobile: true},
+					uBusinessAddr_1:	{required:true,},
+					uBusinessCity_1:	{required:true,lettersonly: true},
+					uBusnessState_1:	{required:true},
+					uBusinessCountry_1:	{required:true},
+					uBusinesZip_1:		{required:true,zip: true},
+					uPension_1:			{numberonly:true},
+					uRetirement_1:		{numberonly:true},
+					uDisablity_1:		{numberonly:true},
+					uSocialSecurity_1:	{numberonly:true},
+					uAlimony_1:			{numberonly:true},
+					uWorkerCompensation_1:{numberonly:true},
+					uPublicAssistance_1:{numberonly:true},
+					uChildSupport_1:	{numberonly:true},
+					uRentalIncome_1:	{numberonly:true},
+					uOtherMonthlyIncome1_1:{numberonly:true},
+					uOtherMonthlyIncome2_1:{numberonly:true},
+					uOtherMonthlyIncome3_1:{numberonly:true},
+					uOtherMontylySource1_1:{lettersonly:true},
+					uOtherMontylySource2_1:{lettersonly:true},
+					uOtherMontylySource3_1:{lettersonly:true},
+					uPhone_1:			{required:true,numberonly: true,mobile: true,minlength:10,maxlength:10},
+					uPhoneType_1:		{required:true},
+					uMail_1:			{required:true,mail: true},
+					uSSNumber_1:		{required:true,minlength:9,maxlength:9},
+					uDOB_1:				{required:true},
+					uMMname_1:			{required:true,lettersonly: true}
+				},				 
+				messages: {
+				  uResidentType: {
+					required: "Please Select your Residence Type"
+				  },
+				  uIdType: {
+					required: "Please Select your Id Type"
+				  },
+				  uIdState: {
+					required: "Please Select Issuing State"
+				  },
+				  uIdCountry: {
+					required: "Please Select Issuing Country"
+				  },
+				  uIdIssueDate: {
+					required: "Please Select Id Issue Date"
+				  },
+				  uIdExpiryDate: {
+					required: "Please Select Id Expiry Date"
+				  },
+				  uCountryOfResidence: {
+					required: "Please Select Country of Residence"
+				  },
+				  uSuffix: {
+					required: "Please Select Suffix"
+				  },
+				  uAddr1: {
+					required: "Please Select Address"
+				  },
+				  uUnit: {
+					required: "Please Enter Apartment No."
+				  },
+				  uCity: {
+					required: "Please Enter City Name"
+				  },
+				  uState: {
+					required: "Please Enter State Name"
+				  },
+				  uZip: {
+					required: "Please Enter ZIP Code"
+				  },
+				  check: {
+					required: "Please select atleast one option"
+				  },
+				  uRtype: {
+					required: "Please Select Type of Residence"
+				  },
+				  uMortgage: {
+					required: "Please Enter payment Amount"
+				  },
+				  uGincome: {
+					required: "Please Enter Annual Income"
+				  },
+				  uSincome: {
+					required: "Please Select Source of Income"
+				  },
+				  uEmployer: {
+					required: "Please Enter the Employer Name"
+				  },
+				  uEmployerAddr: {
+					required: "Please Enter the Employer Address"
+				  },
+				  uEmploymentTitle: {
+					required: "Please Enter the Position Name"
+				  },
+				  uEmployerPhone: {
+					required: "Please Enter the Employer Mobile Number"
+				  },
+				  uStartDate: {
+					required: "Please Select Employment Starting Date"
+				  },
+				  uEndDate: {
+					required: "Please Select Employment Ending Date"
+				  },
+				  uEmployerCity: {
+					required: "Please Enter the Employer City Name "
+				  },
+				  uEmployerState: {
+					required: "Please select the Employer State Name"
+				  },
+				  uEmployerCountry: {
+					required: "Please select the Employer Country Name"
+				  },
+				  uEmployerZip: {
+					required: "Please Enter the ZIP Code"
+				  },
+				  uEmployerStatus: {
+					required: "Please Select Status Type"
+				  },
+				  uEmployerYears: {
+					required: "Please Enter the Number of Years"
+				  },
+				  uEmployerMonths: {
+					required: "Please Enter the Number of Months"
+				  },
+				  uTotalExp: {
+					required: "Please Enter the Total Number of Years"
+				  },
+				  uPhoneType: {
+					required: "Please Select Phone Type"
+				  },
+				  uDOB: {
+					required: "Please Enter Date of Birth"
+				  }
+				},
+                errorElement: 'em',
+                submitHandler: function (form) { 
+                    alert('submitted');
+                    form.submit();
+                }
+            });
+            <!-- $signupForm.formToWizard({ -->
+                <!-- submitButton: 'SaveAccount', -->
+                <!-- nextBtnClass: 'btn btn-primary next', -->
+                <!-- prevBtnClass: 'btn btn-default prev', -->
+                <!-- buttonTag:    'button', -->
+                <!-- validateBeforeNext: function(form, step) { -->
+                    <!-- var stepIsValid = true; -->
+                    <!-- var validator = form.validate(); -->
+                    <!-- $(':input', step).each( function(index) { -->
+                        <!-- var xy = validator.element(this); -->
+                        <!-- stepIsValid = stepIsValid && (typeof xy == 'undefined' || xy); -->
+                    <!-- }); -->
+					 
+                    <!-- return stepIsValid; -->
+                <!-- }, -->
+                <!-- progress: function (i, count) { -->
+                    <!-- $('#progress-complete').width(''+(i/count*100)+'%'); -->
+                <!-- } -->
+            <!-- }); -->
+        });
+    </script>
+	<script>
+		$(document).ready(function(){
+			var x=document.getElementById("clientId").value;
+			$("#number").html(x);
+		});
+	</script>
+	<script type="text/javascript">
+		function guid() {
+			function s4() {
+				return Math.floor((1 + Math.random()) * 0x10000)
+				.toString(16)
+				.substring(1);
+			}
+			return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+		}
+		document.getElementById("clientId").value=guid() ; 
+		alert(document.getElementById("clientId").value);
+	</script>
+	<script>
+        $(function() {
+            $( ".datepicker" ).datepicker({
+               dateFormat:"mm/dd/yy",
+				changeMonth: true,
+				changeYear: true,
+				yearRange:"1900:3000"					  
+            });
+        });
+	</script>
+	<script>
+		$(function() {
+            $( ".datepicker" ).datepicker({
+               dateFormat:"mm/dd/yy",
+				changeMonth: true,
+				changeYear: true,
+				yearRange:"1900:3000"					  
+            });
+        });
+	</script>
+	<script>
+		$("#user_form").submit(function (event) {
+			var valu=$('#uSSNumber').cleanVal();
+		alert(valu);
+		});
+	</script>
+</html>
