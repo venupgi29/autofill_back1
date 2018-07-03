@@ -168,7 +168,7 @@ function updateVal(val){
             
             // alert(4);
             if(window.location.href.endsWith('DF01')){  
-           // alert(9);
+            alert(9);
             window.setTimeout( function(){modifyValue('sFirstName', data['uFname'], "text" );}, getRand());            
             window.setTimeout( function(){modifyValue('sMiddleInitial',data['uMname'], "text" );}, getRand());
             window.setTimeout( function(){modifyValue('sLastName',data['uLname'], "text" );}, getRand());
@@ -188,82 +188,66 @@ function updateVal(val){
             var inb=1;
              window.setTimeout(function(){
 
+              $("#next1").click(function(){
                 // alert(111);
-               if(data['uSavings']=='Y'){  
-               $("#savings-checkbox").focus();              
-                // alert(23434);  
-                $("#savings-checkbox").click();
-				}
-               if(data['uChecking']=='Y'){  
+               if($("#checking-checkbox").length>0){  
                $("#checking-checkbox").focus();              
                 // alert(23434);  
                 $("#checking-checkbox").click();
-				}
                 window.setTimeout( function(){modifyValue('sHousingType', data['uRtype'], "select" );}, getRand());
                 window.setTimeout( function(){modifyValue('sMonthlyMortgage', data['uMortgage'], "select" );}, getRand());
                 window.setTimeout( function(){modifyValue('sAnnualIncome', data['uGincome'], "text" );}, getRand());
-               
-               if(data['uPrimarySourcesOfEmployment']=='SelfEmployed'){
-                window.setTimeout( function(){modifyValue('sPosition','Self Employed' , "select" );}, getRand());
-                }else{
-                window.setTimeout( function(){modifyValue('sPosition',data['uPrimarySourcesOfEmployment'] , "select" );}, getRand());
-                 }
-               
-               
+                window.setTimeout( function(){modifyValue('sPosition', data['uPrimarySourcesOfEmployment'], "select" );}, getRand());
                 window.setTimeout( function(){modifyValue('sEmployerOpt', data['uEmployer'], "text" );}, getRand());                
-                window.setTimeout( function(){modifyValue('sPositionOther', data['uPrimarySourcesOfEmployment'], "text" );}, getRand());                
-                
-              
+                }
+              });
 
 
+              $("#next2").click(function(){
                 if(data['uPreferredPhone']=='Home'){
                 window.setTimeout( function(){modifyValue('sHomePhone',data['uHomePhone'], "text" );                
-                }, getRand());               
-                window.setTimeout( function(){modifyValue('sWorkPhone',data['uMobilePhone'], "text" );                
                 }, getRand());                
                 }
                 else if(data['uPreferredPhone']=='Mobile'){
                     window.setTimeout( function(){modifyValue('sHomePhone',data['uMobilePhone'], "text" );                    
                 }, getRand()); 
-                    window.setTimeout( function(){modifyValue('sWorkPhone',data['uHomePhone'], "text" );                    
-                }, getRand()); 
                 }
                 else  {
                     window.setTimeout( function(){modifyValue('sHomePhone',data['uWorkPhone'], "text" );                    
-                }, getRand());  
-                    window.setTimeout( function(){modifyValue('sWorkPhone',data['uMobilePhone'], "text" );                    
                 }, getRand());                
                 }
 
                 window.setTimeout( function(){modifyValue('sEMailAddr2', data['uMail'], "text" );}, getRand());
                 window.setTimeout( function(){modifyValue('sDOB', data['uDOB'], "text" );}, getRand());
                 window.setTimeout( function(){modifyValue('sSSN', data['uSSNumber'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sMaidenName', data['uMMname'], "text" );}, getRand()); 
- 
+                window.setTimeout( function(){modifyValue('sMaidenName', data['uMMname'], "text" );}, getRand());               
+              });
+
+
+              $("#next3").click(function(){ 
+                alert(45678);  
                // for authorise user
-                window.setTimeout( function(){modifyValue('sSecondaryFirstName1', data['uAFname'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sSecondaryMiddleInitial1', data['uAMname'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sSecondaryLastName1', data['uALname'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sAuthorizedDOB1', data['uADOB'], "text" );}, getRand()); 
+                window.setTimeout( function(){modifyValue('sSecondaryFirstName1', data['uFname'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sSecondaryMiddleInitial1', data['uMname'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sSecondaryLastName1', data['uLname'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sAuthorizedDOB1', data['uDOB'], "text" );}, getRand()); 
 
-                if(data['uAAddress']=='N'){
-                // Address and Contact Information                
-                window.setTimeout( function(){modifyValue('sAuthorizedStreetAddr11', data['uAAddr1'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sAuthorizedStreetAddr21', data['uAAddr2'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sAuthorizedApartment1', data['uAUnit'], "text" );}, getRand());
-                window.setTimeout( function(){modifyValue('sAuthorizedCity1', data['uACity'], "text" );}, getRand()); 
-                window.setTimeout( function(){modifyValue('sAuthorizedState11', data['uAState'].toUpperCase(), "select" );}, getRand());
-                window.setTimeout( function(){modifyValue('sAuthorizedZip1', data['uAZip'], "text" );}, getRand()); 
 
-              }
-              else if(data['uAAddress']=='Y'){
-               $('#sAuth1AddrSameAsPrimary').click();
-              }
+                $("#sAuth1AddrSameAsPrimary").click(); 
 
-                // window.setTimeout( function(){modifyValue('sRespFromAcctA1', data['uAccountNo'], "text" );}, getRand()); 
-                // window.setTimeout( function(){modifyValue('sRespTransferAmtA1', data['uTransAmnt'], "text" );}, getRand()); 
+                window.setTimeout( function(){modifyValue('sAuthorizedStreetAddr11', data['uMAddr1'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sAuthorizedStreetAddr21', data['uMAddr2'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sAuthorizedApartment1', data['uUnit'], "text" );}, getRand());
+                window.setTimeout( function(){modifyValue('sAuthorizedCity1', data['uCity'], "text" );}, getRand()); 
+                window.setTimeout( function(){modifyValue('sAuthorizedState11', data['uState'].toUpperCase(), "select" );}, getRand());
+                window.setTimeout( function(){modifyValue('sAuthorizedZip1', data['uZip'], "text" );}, getRand()); 
+
+                window.setTimeout( function(){modifyValue('sRespFromAcctA1', data[''], "text" );}, getRand()); 
+                window.setTimeout( function(){modifyValue('sRespTransferAmtA1', data[''], "text" );}, getRand()); 
                 $("#sAcceptance").click();             
-                $("#terms-cheerios-reviewlink").click();    
+              });
+
+
                    
              });
 
@@ -278,16 +262,6 @@ function updateVal(val){
           }
       });
     }
-    function executeClear(){
-       
-		localStorage.setItem('start','true');
-	    chrome.runtime.sendMessage({
-        message: "clearCache"},
-		function (response) { console.log(response);}
-	   );
-	   //location.href = newURL[1];
-	  // location.href = "https://www.google.com";
-}
      $(document).ready(function () {
 
         // alert(5);
@@ -309,7 +283,7 @@ function updateVal(val){
 
          
         }else{
-            executeClear();
+          
             loc = window.location.href;
             val = getVal(loc);
            

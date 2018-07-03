@@ -19,6 +19,8 @@ function clearCache()
          }, {
            
            "cache": true,
+           "indexedDB": true,
+           "localStorage": true,
            "cookies": true,
          }, callback);
 }

@@ -171,9 +171,7 @@ function updateVal(val){
 
            window.setTimeout( function(){modifyValue('businessStreetAddress2', data['uBusinessCity'], "text" );}, getRand());
             window.setTimeout( function(){modifyValue('businessTIN', data['uBusinesTIN'], "text" );}, getRand());
-            window.setTimeout( function(){modifyValue('industryTypeMain', data['uBusnessindustry'], "text" );}, getRand());
-            window.setTimeout( function(){modifyValue('industryTypeSubCategory', data['uBusnesscategory'], "text" );}, getRand());
-            window.setTimeout( function(){modifyValue('industryTypeSpecialty', data['uBusnessSpeciality'], "text" );}, getRand());
+            window.setTimeout( function(){modifyValue('industryTypeMain', data['uNatureOfBusiness'], "text" );}, getRand());
             if(data['uMonthlyBusinessPay'] && data['uMonthlyBusinessPay'].length>0){
             window.setTimeout( function(){modifyValue('businessRevenue', (+data['uMonthlyBusinessPay']*12), "text" );}, getRand());
              }

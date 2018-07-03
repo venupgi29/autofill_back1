@@ -346,64 +346,103 @@ function updateVal(val){
                         }
                         window.setTimeout( function(){ modifyValue('occupation_7', data['uOccupation'], "text" );}, getRand());
 
-                   // if(data['uMemberQualification']=='1'){
-                   //      window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
-                   //      $("#howDoYouQualifyForMembership1").click();
-                   //  }, getRand());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  // identity part Membership Qualification
+                   if(data['uMemberQualification']=='1'){
+                        window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
+                        $("#howDoYouQualifyForMembership1").click();
+                    }, getRand());
                        
-                   //  }
-                   //  else if(data['uMemberQualification']=='10'){
-                   //      window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
-                   //      $("#howDoYouQualifyForMembership10").click();
-                   //  }, getRand());
+                    }
+                    else if(data['uMemberQualification']=='10'){
+                        window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
+                        $("#howDoYouQualifyForMembership10").click();
+                    }, getRand());
 
-                   //  }  
-                   //  else if(data['uMemberQualification']=='6'){
-                   //      window.setTimeout( function(){modifyValue('pleaseSelectSponsorCompany',+data['uCompNamelist'], "select" );
-                   //      $("#howDoYouQualifyForMembership6").click();
-                   //  }, getRand());
+                    }  
+                    else if(data['uMemberQualification']=='6'){
+                        window.setTimeout( function(){modifyValue('pleaseSelectSponsorCompany',+data['uCompNamelist'], "select" );
+                        $("#howDoYouQualifyForMembership6").click();
+                    }, getRand());
 
-                   //  }
+                    }
 
-                   //  else if(data['uMemberQualification']=='8'){
-                   //      window.setTimeout( function(){modifyValue('dataDropdown_4',+data['uMemberClubAssociation'], "select" );
-                   //      $("#howDoYouQualifyForMembership8").click();
-                   //  }, getRand());
+                    else if(data['uMemberQualification']=='8'){
+                        window.setTimeout( function(){modifyValue('dataDropdown_4',+data['uMemberClubAssociation'], "select" );
+                        $("#howDoYouQualifyForMembership8").click();
+                    }, getRand());
 
-                   //  }                    
+                    }                    
                     
-                   //  else if(data['uMemberQualification']=='9'){
-                   //      // window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
-                   //      $("#howDoYouQualifyForMembership9").click();
-                   //  // }, getRand());  
-                   //   window.setTimeout( function(){modifyValue("selectAnAssociationToJoin_1Computer_History_Museum").click(); }, getRand());   
-                   //   window.setTimeout( function(){modifyValue("iConsentToBecomeAMember_1").click(); }, getRand());                 
-                   //  }
+                    else (data['uMemberQualification']=='9'){
+                        // window.setTimeout( function(){modifyValue('segInput_7',data['uCompName'], "text" );
+                        window.setTimeout( function(){ 
+                        $("#howDoYouQualifyForMembership9").click();
+                       }, getRand());
+                    // }, getRand());  
+                     window.setTimeout( function(){modifyValue("selectAnAssociationToJoin_1Financial_Fitness_Association").click(); }, getRand());   
+                     window.setTimeout( function(){modifyValue("iConsentToBecomeAMember_1").click(); }, getRand());                 
+                    }
 
-                   //  else
-                   //  {
-                   //    $("#howDoYouQualifyForMembership").click();
-                   //  }
+                    // credit form stage   Additional Services
+                    window.setTimeout( function(){ $("#onlineBankingEnrollment").click(); }, getRand());
 
-                    
-                   
-                     
-                    // if(data['CreditApplicant']=='false'){
-                    //     $("#jointfalse").click();
-                    // }
-                    // else if(data['CreditApplicant']=='true'){
-                    //     $("#jointtrue").click();
-                    // }  
+                    // credit form stage Applicant
+                    if(data['joint']=='true'){
+                        window.setTimeout( function(){ $("#jointfalse").click(); }, getRand());
+                    }
+                    else(data['joint']=='false'){
+                       window.setTimeout( function(){  $("#jointtrue").click(); }, getRand());
+                    }  
 
 
-                    // $("#iHaveReadTheESignDisclosure").click();
-                    // $("#iHaveReadAndAgreeToConfirm").click();
-                    // $("#iHaveReviewedThePrivacy").click();
-                    // $("#iHaveReviewedTheTruth").click();
-                    // $("#iHaveReviewedMastercard").click();
-                    // $("#iHaveReadAndAgreeToThe").click();
-                    // $("#pleaseSelectTheTaxStatement_12").click();
-                    // $("#byProvidingFirstTechWithtrue").click();
+                    // in disclosures part all checkbox
+                    window.setTimeout( function(){ $("#iHaveReadTheESignDisclosure").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iHaveReadAndAgreeToConfirm").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iHaveReviewedThePrivacy").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iHaveReviewedTheTruth").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iHaveReviewedMastercard").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iHaveReadAndAgreeToThe").click(); }, getRand());
+
+                    // all radio button
+                    window.setTimeout( function(){ $("#pleaseSelectTheTaxStatement_12").click(); }, getRand());
+                    window.setTimeout( function(){ $("#iCertifyThatUnderThePenalties_9").click(); }, getRand());
+
+                    window.setTimeout( function(){ $("#byProvidingFirstTechWithtrue").click(); }, getRand());
+                    // to this
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                    //occupation_7
                 
                    //isThisYourMailingAddress_1
@@ -412,27 +451,9 @@ function updateVal(val){
                 //employmentStatus_4
                 //totalAnnualIncome
                 }else{
-                  // alert(411);
-                    $("#howDoYouQualifyForMembership9").click(); 
-                    $("#howDoYouQualifyForMembership9").click(); 
-                    $("#selectAnAssociationToJoin_1Financial_Fitness_Association").click();
-                    $("#iConsentToBecomeAMember_1").click();
-                    $("#onlineBankingEnrollment").click();
-                    $("#jointfalse").click();
-
-                    $("#iHaveReadTheESignDisclosure").click();
-                    $("#iHaveReadAndAgreeToConfirm").click();
-                    $("#iHaveReviewedThePrivacy").click();
-                    $("#iHaveReviewedTheTruth").click();
-                    $("#iHaveReviewedMastercard").click();
-                    $("#iHaveReadAndAgreeToThe").click();
-
-                    $("#pleaseSelectTheTaxStatement_12").click();
-                    $("#iCertifyThatUnderThePenalties_9").click();
-                    $("#byProvidingFirstTechWithtrue").click();
-
-
-
+                  
+                     
+                   
                         if(data['uResidentType']=='Citizen'){
                            $('#whatIsYourResidenceStatusUS_CITIZEN').click();  
                         }else if(data['uResidentType']=='Resident'){
@@ -445,36 +466,9 @@ function updateVal(val){
                     $("#idNonBranch").change(function(){
                         if(data['uIdNo']){
                         window.setTimeout( function(){modifyValue('textInput_1',data['uIdNo'], "text" );}, getRand());
-                        window.setTimeout( function(){modifyValue('countryIssuedBy', "string:"+data['uIdCountry'].toUpperCase(), "select" );}, getRand());
-                        window.setTimeout( function(){modifyValue('dataDropdown', "string:"+data['uIdState'].toUpperCase(), "select" );}, getRand());
-                        
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('GET', chrome.runtime.getURL('js/countries.json'));
-                        xhr.onload = function() {
-                            if (xhr.status === 200) {
-                               
-                                var jsonTxt= xhr.responseText;
-                                var json=JSON.parse(jsonTxt);
-                                json.forEach(element => {
-                                    if(element.code==data['uCountryOfResidence'].toUpperCase()){
-                                        modifyValue('selectCountryOfCitizenship', "string:"+element.firsttech, "select" );
-                                    }
-                                });
-                            }
-                            else {
-                               // alert('Request failed.  Returned status of ' + xhr.status);
-                            }
-                        };
-                        xhr.send();
-
-
-
-                        
-                        
-
-
-                        
-                        
+                        window.setTimeout( function(){modifyValue('countryIssuedBy', "string:"(+data['uIdCountry'].toUpperCase()), "select" );}, getRand());
+                        window.setTimeout( function(){modifyValue('dataDropdown', "string:"(+data['uIdState'].toUpperCase()), "select" );}, getRand());
+                        window.setTimeout( function(){modifyValue('selectCountryOfCitizenship', "string:"(+data['uCitizenCountry'].toUpperCase()), "select" );}, getRand());
                         window.setTimeout( function(){modifyValue('issuedDate', data['uIdIssueDate'], "text" );}, getRand());
                         window.setTimeout( function(){modifyValue('expirationDate', data['uIdExpiryDate'], "text" );}, getRand());
                         if(!data['uIdIssueDate'] || data['uIdIssueDate']==''){
@@ -499,20 +493,9 @@ function updateVal(val){
                 }
             });
           }
-
-          function executeClear(){
-       
-            localStorage.setItem('start','true');
-            chrome.runtime.sendMessage({
-            message: "clearCache"},
-            function (response) { console.log(response);}
-           );
-           //location.href = newURL[1];
-          // location.href = "https://www.google.com";
-    }
  $(document).ready(function () {
 
-        // alert(5);
+        alert(5);
 
         if(window.location.hostname.startsWith('ft360.')){
             val = getVal(window.location.href);
@@ -531,7 +514,7 @@ function updateVal(val){
 
          
         }else{
-            executeClear();
+          
             loc = window.location.href;
             val = getVal(loc);
            

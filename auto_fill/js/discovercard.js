@@ -144,7 +144,7 @@ function popExpiringWindow()
 {
 	// display timeout warning popup window, but refresh voyager first
     var popWinUrl = "timeOut.html";
-    //alert(popWinUrl);
+    ////alert(popWinUrl);
 	var windowParams = "scrollbars=no,menubar=no,toolbar=no,location=no,resizable=no,directories=no,status=no,titlebar=no,hotkeys=no,width=400,height=110";
     newWin = window.open(popWinUrl,"ExpiringPopup",windowParams);
 }
@@ -258,7 +258,7 @@ function getVal(loc){
 
  function getRand(){
    rand = rand + Math.floor(Math.random() * (2000 - 1000));
-   //alert(rand);
+   ////alert(rand);
    return rand;
  }
 
@@ -284,7 +284,7 @@ function getVal(loc){
           }
       }
       if(ref == null){
-        //alert("Cant find: " + field);
+        ////alert("Cant find: " + field);
         return "NA";
       }
       
@@ -326,7 +326,7 @@ function fieldExists(field){
 
 } 
 function updateVal(val){
-    alert(1);
+    //alert(1);
     chrome.storage.sync.get(['SERVER_URL'], function(result) {
         if(result.SERVER_URL){
    
@@ -336,12 +336,14 @@ function updateVal(val){
        dataType: 'json',
        contentType: 'application/json; charset=utf-8',
        success: function (data) {
-        alert(2);
+        //alert(2);
         window.setTimeout( function(){ modifyValue('firstName', data['uFname'] , "text" );}, getRand());
         window.setTimeout( function(){ modifyValue('lastName', data['uLname'] , "text" );}, getRand());
         window.setTimeout( function(){ modifyValue('middleName', data['uMname'] , "text" );}, getRand());
+         
+        window.setTimeout( function(){ modifyValue('zipCode', data['uZip'] , "text" );}, getRand());
         
-       // window.setTimeout( function(){ modifyValue('Suffix', data['uSuffix'] , "select" );}, getRand());
+       window.setTimeout( function(){ modifyValue('Suffix', data['uSuffix'].toUpperCase() , "select" );}, getRand());
        window.setTimeout( function(){ modifyValue('streetAddress', data['uAddr1'] , "text" );}, getRand());
        window.setTimeout( function(){ modifyValue('homeAddress1', data['uAddr1'] , "text" );}, getRand());
        window.setTimeout( function(){ modifyValue('homeAddress2', data['uAddr2'] , "text" );}, getRand());
@@ -349,7 +351,9 @@ function updateVal(val){
        window.setTimeout( function(){ modifyValue('floor', data['uAddr2'] , "text" );}, getRand());
        window.setTimeout( function(){ modifyValue('city', data['uCity'] , "text" );}, getRand());
        window.setTimeout( function(){ modifyValue('state', data['uState'].toUpperCase() , "select" );}, getRand());
-       window.setTimeout( function(){ modifyValue('suffix', data['uSufix'].toUpperCase() , "select" );}, getRand());
+      if(data['uSufix']){
+          window.setTimeout( function(){ modifyValue('suffix', data['uSufix'].toUpperCase() , "select" );}, getRand());
+        }
        if(data['uPreferredPhone']=='Home'){
         window.setTimeout( function(){modifyValue('homePhone',data['uHomePhone'], "text" );}, getRand());
        
@@ -361,67 +365,204 @@ function updateVal(val){
         window.setTimeout( function(){modifyValue('homePhone',data['uWorkPhone'], "text" );}, getRand());
      
     }
-    window.setTimeout( function(){modifyValue('email',data['uMail'], "text" )}, getRand());
-    
-    
-       var $sel = $("#state");
-       var value = $sel.val();
-       var text = $("option:selected",$sel).text(); 
-       $("#state-button > span.ui-selectmenu-text").html(text);
-       window.setTimeout( function(){ modifyValue('total-annual-gross-income', data['uGincome'], "text" );},getRand());
 
-       window.setTimeout( function(){ modifyValue('monthly-housing-rent', data['uMortgage'], "text" );},getRand());
+    window.setTimeout( function(){modifyValue('email',data['uMail'], "text" )
+    $("#email").blur()
+}, getRand());
+    window.setTimeout( function(){modifyValue('socialSecurity',data['uSSNumber'], "text" )}, getRand());
+    window.setTimeout( function(){modifyValue('total-annual-gross-income',data['uGincome'], "text" )}, getRand());
+    window.setTimeout( function(){modifyValue('monthly-housing-rent',data['uMortgage'], "text" )}, getRand());
+     if(data['uRtype']=='Rent'){
+				$("#house-status-button-selected-val").click();
+		window.setTimeout( function(){modifyValue('house-status',"R", "select" )}, getRand());
+	  }else if(data['uRtype']=='Own'){
+				$("#house-status-button-selected-val").click();
+		window.setTimeout( function(){modifyValue('house-status',"O", "select" )}, getRand());
+	  }else {
+				$("#house-status-button-selected-val").click();
+		window.setTimeout( function(){modifyValue('house-status',"X", "select" )}, getRand());
+	  }
+        if(data['uChecking']=='Y')
+		{
+				$("#checkingOrDebit").click();			
+		}
+		else{			
+				$("#checking-or-ebit").click();	
+		}
+        if((data['uSavings']=='Y')||(data['uSavings']=='Y'))
+		{
+				$("#savingsIraMoneyMarket").click();			
+		}
+		else{			
+				$("#saving-ira").click();	
+		}
+    window.setTimeout( function(){modifyValue('social-security-number',data['uSSNumber'], "text" )}, getRand());
+    
+    $("#acqNextBtnFirst").click(function(){
+
+
+			
+        if(data['uEmployerStatus']=='FT'){
+            window.setTimeout( function(){ 
+              
+              modifyValue('employStatus', 'F' , "select" );
+              window.setTimeout( function(){modifyValue('employerName',data['uEmployer'], "text" );}, 15);
+              if(data['uTotalExp'] && data['uTotalExp'].length>0){
+                window.setTimeout( function(){modifyValue('employmentTime',(+data['uTotalExp'])/12 | 0, "text" );}, 14);
+              }
+              window.setTimeout( function(){modifyValue('phoneBusiness',data['uEmployerPhone'], "text" );}, 15);
+              
+
+
+
+
+               }, getRand());
+        }else  if(data['uEmployerStatus']=='PT'){
+           window.setTimeout( function(){ 
+            modifyValue('employStatus', 'P' , "select" );
+            modifyValue('employStatus', 'F' , "select" );
+              window.setTimeout( function(){modifyValue('employerName',data['uEmployer'], "text" );}, 15);
+              if(data['uTotalExp'] && data['uTotalExp'].length>0){
+                window.setTimeout( function(){modifyValue('employmentTime',(+data['uTotalExp'])/12 | 0, "text" );}, 14);
+              }
+              window.setTimeout( function(){modifyValue('phoneBusiness',data['uEmployerPhone'], "text" );}, 15);
+              
+
+               }, getRand());
+       }else  if(data['uOther']=='Y'  ){// && data['uRetirement']  && data['uRetirement'].length>0
+           window.setTimeout( function(){ 
+            modifyValue('employStatus', 'O' , "select" ); 
+               }, getRand());
+       }else  if(data['uRetirement']=='Y'){
+        window.setTimeout( function(){ 
+         modifyValue('employStatus', 'R' , "select" );
+             }, getRand());
+         }else  if(data['uSelfEmployed']=='Y'){
+           window.setTimeout( function(){ 
+            modifyValue('employStatus', 'S' , "select" );
+
+            modifyValue('employStatus', 'F' , "select" );
+              window.setTimeout( function(){modifyValue('employerName',data['uBusinessName'], "text" );}, getRand());
+              if(data['uTotalExp'] && data['uTotalExp'].length>0){
+                window.setTimeout( function(){modifyValue('employmentTime',(data['uBusinessYears']), "text" );}, getRand());
+              }
+              window.setTimeout( function(){modifyValue('phoneBusiness',data['uBusinessPhone'], "text" );}, getRand());
+              
+
+                }, getRand());
+       }else{
+           window.setTimeout( function(){ 
+            modifyValue('employStatus', 'U' , "select" );
+               }, getRand());
+       }
        
+       setTimeout( function(){modifyValue('yearlyIncome',data['uGincome'], "text" );}, getRand());
        if(data['uRtype']=='Rent'){
-        window.setTimeout( function(){ modifyValue('house-status','R', "select" );}, getRand());
-     
-        $("#house-status-button > span.ui-selectmenu-text").html('Rent');
-        
+        $("#doYouOwnOrRentOWN").click();
+        window.setTimeout( function(){ modifyValue('housingStatus', 'R', "text" );}, getRand());
       //  updateRadioButton('');
-    }else   if(data['uRtype']=='Own'){
-        window.setTimeout( function(){ modifyValue('house-status','O', "select" );}, getRand());
-    
-        $("#house-status-button > span.ui-selectmenu-text").html('Own Home');
-    }else{
-        window.setTimeout( function(){ modifyValue('house-status','X', "select" );}, getRand());
-     
-        $("#house-status-button > span.ui-selectmenu-text").html('Other');
-    }
-    
- 
-     
-
-       window.setTimeout( function(){ modifyValue('zipCode', data['uZip'] , "select" );}, 1000);
-
-       var y=data['uDOB'].split("/");
+        }else  if(data['uRtype']=='Own'){
+            $("#doYouOwnOrRentOWN").click();
+            window.setTimeout( function(){ modifyValue('housingStatus', 'R', "text" );}, getRand());
+          //  updateRadioButton('');
+        }else{
+            $("#doYouOwnOrRentRENT").click();
+            window.setTimeout( function(){ modifyValue('housingStatus', 'X', "text" );}, getRand());
+        }
+        window.setTimeout( function(){ modifyValue('occupation', 'OTHR', "select" );
+        
+         modifyValue('otherOccupation', data['uOccupation'], "text" );
+        
+        }, getRand());
         
 
-           window.setTimeout( function(){ modifyValue('month', y[0] , "select" );}, 1000);
-           window.setTimeout( function(){ modifyValue('date', y[1] , "select" );}, 1000);
-           window.setTimeout( function(){ modifyValue('year', y[2] , "select" );}, 1000);
-           if(data['uSSNumber'] && data['uSSNumber'].length==9){  
-            var str='';
-            str=str+data['uSSNumber'].substr(0,3);
-            str=str+'-'+data['uSSNumber'].substr(3,2);
-            str=str+'-'+data['uSSNumber'].substr(5,4);
+
+        window.setTimeout( function(){ modifyValue('monthlyRent', data['uMortgage'], "text" );}, getRand());
+        window.setTimeout( function(){ modifyValue('currResiTime', data['uYearAtAddr'], "text" );}, getRand());
+        window.setTimeout( function(){$("input[name=checkingOrDebit][value=No]").attr('checked', 'checked');}, getRand());
+        window.setTimeout( function(){$("input[name=savingsIraMoneyMarket][value=No]").attr('checked', 'checked');}, getRand());
+      
+        
+
+
+
+
+    })
+
+        $("#acqNextBtnSecond").click(function(){
+
+        window.setTimeout( function(){modifyValue('birthDate',data['uDOB'], "text" );}, getRand());
+
+        window.setTimeout( function(){modifyValue('securityNo',data['uSSNumber'], "text" );}, getRand());
+        
+        window.setTimeout( function(){modifyValue('motherMaidenName',data['uMMname'], "text" );}, getRand());
+
+        
+
+        
+        if(data['uResidentType']=='Citizen'){
+            window.setTimeout( function(){$("input[name=citizen][value=Yes]").attr('checked', 'checked');}, getRand());
             
-            window.setTimeout( function(){ modifyValue('social-security-number', str , "select" );}, 1000);
-        }
-           
-           
-        $("#terms-check").attr('checked',true);
-        $("#terms-check").attr('agreeTerms',true);
+          
+         }else {
+             $("#form_1_SI > div:nth-child(18) > div.positionRelative.iconAlign.savingsMoneyMarketAccBox > input:nth-child(3)").click();
+            window.setTimeout( function(){$("input[name=citizen][value=No]").attr('checked', 'checked');}, getRand());    
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', chrome.runtime.getURL('js/countries.json'));
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+               
+                var jsonTxt= xhr.responseText;
+                var json=JSON.parse(jsonTxt);
+                json.forEach(element => {
+                    if(element.code==data['uCountryOfResidence'].toUpperCase()){
+                        //alert(element.firsttech);
+                        window.setTimeout( function(){ modifyValue('country', element.firsttech, "select" );}, getRand());
+                    }
+                });
+            }
+            else {
+               // //alert('Request failed.  Returned status of ' + xhr.status);
+            }
+        };
+        xhr.send();
+         }
+
+        //citizen
+
+        
+        });
+        $("#disclosureCont").click(function(){
+            window.setTimeout( function(){
+                $("#agreeTermsCond").click();
+    
+            }, 15);
+        })
+       
+        
+
+
        }});
     }
 });
 }
- 
+function executeClear(){
+       
+    localStorage.setItem('start','true');
+    chrome.runtime.sendMessage({
+    message: "clearCache"},
+    function (response) { console.log(response);}
+   );
+   //location.href = newURL[1];
+  // location.href = "https://www.google.com";
+}
  $(document).ready(function () {
 
          
 
 
-      
+            if(window.location.href.indexOf('/application/')>0){
             val = getVal(window.location.href);
             if(!val || val.length==0){
                 chrome.storage.sync.get(['UUID'], function(result) {
@@ -431,6 +572,10 @@ function updateVal(val){
                 updateVal(val);
                
             }
-   
+        }else{
+            executeClear();
+            loc = window.location.href;
+            val = getVal(loc);
+        }
             
  });

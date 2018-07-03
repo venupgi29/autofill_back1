@@ -35,7 +35,7 @@
 					<form id="SignupForm" action="/saveMasterForm" method="post">
 						{% include 'personal.html' %}
 						{% include 'identity.html' %}
-					-->	{% include 'financial.html' %}
+						{% include 'financial.html' %}
 					<!--	
 						<fieldset>
 							<legend>Residential information</legend>
@@ -63,6 +63,15 @@
 	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="/script.js"></script>
     <script>
+        $( function() {
+			$("#uFinancialAffiliationName").css("display","none");
+			$("#uFinancialAffiliation_true").click(function() {
+				$("#uFinancialAffiliationName").show();
+			});
+			$("#uFinancialAffiliation_no").click(function() {
+				$("#uFinancialAffiliationName").hide();
+			});
+		});
         $( function() {
 			$("input[value$='NonResident']").click(function() {
 				$("div.residentcountries").show();
@@ -92,6 +101,10 @@
 		jQuery.validator.addMethod("title", function(value, element) {
 			return this.optional(element) || /^[a-zA-Z\s.\-]+$/i.test(value);
 		}, "Letters and '.' only please");
+		
+		jQuery.validator.addMethod("unit", function(value, element) {
+			return this.optional(element) || /^[0-9\a-zA-Z\s.\s-\-]+$/i.test(value);
+		}, "Letters,numbers and '.','-' only please");
 		
 		
 		jQuery.validator.addMethod("alphanumeric", function(value, element) {
@@ -150,6 +163,29 @@
             
             $signupForm.validate({
 			   rules: {
+					uAFname:{required: true,lettersonly: true},
+					uAMname:{required: true},
+					uALname:{required: true,lettersonly: true},
+					uASuffix:{required: true,lettersonly: true},
+					uADOB:{required: true},
+					uAAddr1:{required: true},
+					uAUnit:{required: true,unit: true},
+					uACity:{required: true,lettersonly: true},
+					uAState:{required: true},
+					uACountry:{required: true},
+					uAZip:{required: true,zip: true},
+					uPOB:{required: true},
+					uPOCity:{required: true},
+					uPOState:{required: true},
+					uPOZip:{required: true},
+					uFinancialAffiliation:{required: true},
+					uPreviousEmployer:	{lettersonly: true},
+					uPreviousOccupation:	{lettersonly: true},
+					uFinancialAffiliationName:{required: true,lettersonly: true},
+					uGNTincome:			{numberonly: true},
+					uHNTincome:			{numberonly: true},
+					uHincome:			{numberonly: true},
+					sourceofincome:		{required: true},
 					uLoanAmount:		{required: true,numberonly: true},
 					uLoanFor:	 		{required: true},
 					uloanduration: 		{required: true},
@@ -170,11 +206,13 @@
 					uWorkPhone: 		{numberonly: true,mobile: true},
 					uPreferredPhone: 	{required: true},
 					uAddr1:				{required: true},
-					uUnit: 				{required: true},
+					uUnit: 				{required: true,unit: true},
 					uCity: 				{required: true,lettersonly: true},
 					uState: 			{required: true},
 					uCountry: 			{required: true},	
 					uZip: 				{required: true,zip: true,numberonly: true,minlength:5,maxlength:5},
+					uSWHint: 			{required: true},
+					uSWord:			 	{required: true},
 					uEmargancyFname: 	{required: true,lettersonly: true},
 					uEmargancyMname: 	{required: false,lettersonly: true,maxlength:1},
 					uEmargancyLname: 	{required: true,lettersonly: true},
@@ -214,18 +252,17 @@
 					uEmployerStatus:	{required:true},
 					uEmployerYears:		{required:true,numberonly: true},
 					uEmployerMonths:	{required:true,numberonly: true,range: [0,11]},
-					uTotalExp:			{required:true,exp: true},
+					uTotalExp:			{required:true,numberonly: true},
 					uPrimarySourcesOfEmployment:{required:true},
 					uBusinessName:		{required:true},
 					uNatureOfBusiness:	{required:true,lettersonly: true},
 					uBusinessStartDate:	{required:true,},
 					uBusinessEndDate:	{BusinessendDate:true},
-					uBusinessOccupation:{required:true},
+					uBusinessOccupation:{required:true,lettersonly: true},
 					uBusinessYears:		{required:true},
 					uBusinessMonths:	{required:true,range: [0,11]},
 					uMonthlyBusinessPay:{required:true,numberonly: true},
 					uBusinessPhone:		{required:true,mobile: true},
-					uFinancialAffiliation:{lettersonly:true,},
 					uAccessibleIncome:	{numberonly:true,},
 					uBusinessAddr:		{required:true,},
 					uBusinessCity:		{required:true,lettersonly: true},
@@ -234,7 +271,7 @@
 					uBusinesZip:		{required:true,zip: true,minlength:5,maxlength:5},
 					uBusnesslegal:		{required:true},
 					uBusinessownership:	{required:true},
-					uBusinesTIN:		{required:true,numberonly:true,minlength:10,maxlength:10},
+					uBusinesTIN:		{required:true,numberonly:true},
 					uBusnessindustry:	{required:true},
 					uBusinesSpend:		{required:true,numberonly:true},
 					uBusinesHQ:			{required:true,lettersonly:true},
@@ -469,25 +506,25 @@
                     form.submit();
                 }
             });
-            <!-- $signupForm.formToWizard({ -->
-                <!-- submitButton: 'SaveAccount', -->
-                <!-- nextBtnClass: 'btn btn-primary next', -->
-                <!-- prevBtnClass: 'btn btn-default prev', -->
-                <!-- buttonTag:    'button', -->
-                <!-- validateBeforeNext: function(form, step) { -->
-                    <!-- var stepIsValid = true; -->
-                    <!-- var validator = form.validate(); -->
-                    <!-- $(':input', step).each( function(index) { -->
-                        <!-- var xy = validator.element(this); -->
-                        <!-- stepIsValid = stepIsValid && (typeof xy == 'undefined' || xy); -->
-                    <!-- }); -->
+            $signupForm.formToWizard({
+                submitButton: 'SaveAccount',
+                nextBtnClass: 'btn btn-primary next',
+                prevBtnClass: 'btn btn-default prev',
+                buttonTag:    'button',
+                validateBeforeNext: function(form, step) {
+                    var stepIsValid = true;
+                    var validator = form.validate();
+                    $(':input', step).each( function(index) {
+                        var xy = validator.element(this);
+                        stepIsValid = stepIsValid && (typeof xy == 'undefined' || xy);
+                    });
 					 
-                    <!-- return stepIsValid; -->
-                <!-- }, -->
-                <!-- progress: function (i, count) { -->
-                    <!-- $('#progress-complete').width(''+(i/count*100)+'%'); -->
-                <!-- } -->
-            <!-- }); -->
+                    return stepIsValid;
+                },
+                progress: function (i, count) {
+                    $('#progress-complete').width(''+(i/count*100)+'%');
+                }
+            });
         });
     </script>
 	<script>
@@ -509,16 +546,6 @@
 		alert(document.getElementById("clientId").value);
 	</script>
 	<script>
-        $(function() {
-            $( ".datepicker" ).datepicker({
-               dateFormat:"mm/dd/yy",
-				changeMonth: true,
-				changeYear: true,
-				yearRange:"1900:3000"					  
-            });
-        });
-	</script>
-	<script>
 		$(function() {
             $( ".datepicker" ).datepicker({
                dateFormat:"mm/dd/yy",
@@ -528,10 +555,42 @@
             });
         });
 	</script>
-	<script>
-		$("#user_form").submit(function (event) {
-			var valu=$('#uSSNumber').cleanVal();
-		alert(valu);
-		});
-	</script>
+	
+<script>
+$(document).ready(function() {
+
+    $("#uBusnessindustry").change(function() {
+        var val = $(this).val();
+        if (val == "Agriculture") {
+            $("#uBusnesscategory").html("<option value=''> -- </option><option value='AnimalFarming'>Animal Farming- Cattle, Pig, Poultry, Sheep, Goat, Other</option><option value='Aquaculture'>Aquaculture and Apiculture Farming</option><option value='Fishing'>Fishing, Hunting and Trapping</option><option value='Forestry'>Forestry and Logging</option><option value='Grain'>Grain &amp; Oilseed Farming</option><option value='Greenhouse'>Greenhouse, Nursery, and Floriculture Production</option><option value='OtherCrop'>Other Crop Farming</option><option value='Support'>Support Activities for Agriculture and Forestry</option><option value='Vegetable'>Vegetable, Melon, Fruit &amp; Nut Farming</option>");
+        } else if (val == "Associations") {
+            $("#uBusnesscategory").html("<option value=''> -- </option>");
+        }
+    });
+	$("#uBusnesscategory").change(function() {
+        var val = $(this).val();
+        if (val == "AnimalFarming") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Beef'>Beef Cattle Ranching and Farming</option><option value='Broilers'>Broilers and Other Meat Type Chicken Production</option><option value='Cattle'>Cattle feedlots</option><option value='Chicken'>Chicken Egg Production</option><option value='Dairy'>Dairy Cattle and Milk Production</option><option value='Dual-Purpose'>Dual-Purpose Cattle Ranching and Farming</option><option value='Fur-Bearing'>Fur-Bearing Animal and Rabbit Production</option><option value='Goat'>Goat Farming</option><option value='Hog'>Hog and Pig Farming</option><option value='Horses'>Horses and Other Equine Production</option><option value='Other'>Other Poultry Production</option><option value='Poultry'>Poultry Hatcheries</option><option value='Sheep'>Sheep Farming</option><option value='Turkey'>Turkey Production</option>");
+        } else if (val == "Aquaculture") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Apiculture'>Apiculture (Bee Production)</option><option value='Finfish Farming'> Finfish Farming and Fish Hatcheries</option><option value='Other Aquaculture'> Other Aquaculture (Alligator, Frog, Turtle)</option><option value='Shellfish'> Shellfish Farming</option>");
+        } else if (val == "Fishing") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Finfish'>Finfish fishing</option><option value='Hunting'>Hunting and Trapping</option><option value='Other Marine'>Other Marine Fishing</option><option value='Shellfish'>Shellfish fishing</option>");
+        } else if (val == "Forestry") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Forest Nurseries'>Forest Nurseries and Gathering of Forest Products</option><option value='Logging'>Logging</option><option value='TimberTract'>Timber Tract Operations</option>");
+        } else if (val == "Grain") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='All other grain'>All other grain farming</option><option value='Cornfarming'>Corn farming</option><option value='DryPea'>Dry Pea and Bean Farming</option><option value='HayFarming'>Hay Farming</option><option value='OilseedFarming'>Oilseed (except Soybean) Farming</option><option value='Oilseedgrain'>Oilseed and grain combination farming</option><option value='Rice'>Rice Farming</option><option value='Soybean'>Soybean farming</option><option value='Wheat'>Wheat farming</option>");
+        } else if (val == "Greenhouse") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Floriculture'>Floriculture Production</option><option value='Nursery'>Nursery and Tree Production</option><option value='OtherFoodCrops'>Other Food Crops Grown Under Cover</option>");
+        } else if (val == "OtherCrop") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='All Other Miscellaneous'>All Other Miscellaneous Crop Farming</option><option value='Cottonfarming'>Cotton farming</option><option value='SugarcaneFarming'>Sugarcane Farming</option><option value='Tobaccofarming'>Tobacco farming</option>");
+        } else if (val == "Support") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Cottonginning'>Cottonginning</option><option value='CropHarvesting'>CropHarvesting,PrimarilybyMachine</option><option value='FarmLaborContractors'>FarmLaborContractorsandCrewLeaders</option><option value='Farmmanagementservices'>Farmmanagementservices</option><option value='PostharvestCrop'>PostharvestCropActivities(exceptCottonGinning)</option><option value='SoilPreparation'>SoilPreparation,Planting,andCultivating</option><option value='SupportActivities'>SupportActivitiesforAnimalProduction</option><option value='SupportActivities'>SupportActivitiesforForestry</option>");
+        } else if (val == "Vegetable") {
+            $("#uBusnessSpeciality").html("<option value=''> -- </option><option value='Appleorchards'>Appleorchards</option><option value='Berry'>Berry(exceptstrawberry)Farming</option><option value='Citrusgroves'>Citrusgroves(exceptorange)</option><option value='Fruitandtreenut'>Fruitandtreenutcombinationfarming</option><option value='GrapeVineyards'>GrapeVineyards</option><option value='MushroomProduction'>MushroomProduction</option><option value='Orangegroves'>Orangegroves</option><option value='OtherNoncitrus'>OtherNoncitrusFruitFarming</option><option value='OtherVegetable'>OtherVegetable(exceptPotato)andMelonFarming</option><option value='Peanutfarming'>Peanutfarming</option><option value='PotatoFarming'>PotatoFarming</option><option value='Strawberryfarming'>Strawberryfarming</option><option value='Sugarbeetfarming'>Sugarbeetfarming</option>");
+        }
+    });
+
+
+});
+</script>
 </html>

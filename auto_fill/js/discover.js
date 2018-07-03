@@ -181,19 +181,29 @@ function updateVal(val){
             var text = $("option:selected",$sel).text(); 
             $("#selectDropDownLabelstate").html(text);
            
-        }, getRand());
+            }, getRand());
 
             window.setTimeout( function(){modifyValue('zip', data['uZip'], "text" );}, getRand());
             window.setTimeout( function(){modifyValue('loanAmt', data['uLoanAmount'], "text" );}, getRand());
 
 
-            if(data['uRtype']=='Rent'){
-             $('#rent').click();
-             }else if(data['uRtype']=='Own'){
-                $('#own').click();
-             }else{
-               $('#other').click();
-             }
+          window.setTimeout( function(){modifyValue('loanUsage-custom', data['uLoanFor'], "text" );}, getRand());
+           
+          if(data['uloanduration']=='36months'){
+             $('#36months_').click();
+           }
+           else if(data['uloanduration']=='48months_'){
+              $('#48months_').click();
+           }
+           else if(data['uloanduration']=='60months_'){
+              $('#60months_').click();
+           }
+           else if(data['uloanduration']=='72months_'){
+              $('#72months_').click();
+           }
+           else if(data['uloanduration']=='84months_'){
+              $('#84months_').click();
+           }
 
             
             if(data['uPreferredPhone']=='Home'){
@@ -220,19 +230,103 @@ function updateVal(val){
 
         else if(window.location.href.endsWith('ac2')){
            
-            alert(12);
-           
-            employed-full-time_
-            employed-part-time_
-            employed-self_
-            unemployed_
-        }
+            // alert(12);
+           if(data['uEmployerStatus']=='FT'){
+             $('#employed-full-time_').click();
+              window.setTimeout( function(){modifyValue('employerName', data['uEmployer'], "text" );}, getRand());              
+              // window.setTimeout( function(){modifyValue('occupation-custom', data['uOccupation'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('individualIncome', data['uGincome'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxableIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('householdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxablehouseholdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('monthlyHousingPayment', data['uMortgage'], "text" );}, getRand());
+              if(data['UhasAccount']=='Y'){
+                 $('#savings-acnt-yes_').click();
+               }
+               else{
+                  $('#savings-acnt-no_').click();
+               }
+
+              window.setTimeout( function(){modifyValue('ssn', data['uSSNumber'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('dob', data['uDOB'], "text" );}, getRand());
+           }
+           else if(data['uEmployerStatus']=='PT'){
+              $('#employed-part-time_').click();
+               window.setTimeout( function(){modifyValue('employerName', data['uEmployer'], "text" );}, getRand());              
+              // window.setTimeout( function(){modifyValue('occupation-custom', data['uOccupation'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('individualIncome', data['uGincome'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxableIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('householdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxablehouseholdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('monthlyHousingPayment', data['uMortgage'], "text" );}, getRand());
+              if(data['UhasAccount']=='Y'){
+                 $('#savings-acnt-yes_').click();
+               }
+               else{
+                  $('#savings-acnt-no_').click();
+               }
+              window.setTimeout( function(){modifyValue('ssn', data['uSSNumber'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('dob', data['uDOB'], "text" );}, getRand());
+           }
+           else if(data['uEmployerStatus']=='SE'){
+              $('#employed-self_').click();
+
+               window.setTimeout( function(){modifyValue('employerName', data['uBusinessName'], "text" );}, getRand());              
+              // window.setTimeout( function(){modifyValue('occupation-custom', data['uOccupation'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('individualIncome', data['uGincome'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxableIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('householdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxablehouseholdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('monthlyHousingPayment', data['uMortgage'], "text" );}, getRand());
+              if(data['UhasAccount']=='Y'){
+                 $('#savings-acnt-yes_').click();
+               }
+               else{
+                  $('#savings-acnt-no_').click();
+               }
+              window.setTimeout( function(){modifyValue('ssn', data['uSSNumber'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('dob', data['uDOB'], "text" );}, getRand());
+
+           }
+           else if(data['uEmployerStatus']=='UE'){
+              $('#unemployed_').click();
+
+               window.setTimeout( function(){modifyValue('unemployment-custom', data[''], "text" );}, getRand());              
+              // window.setTimeout( function(){modifyValue('occupation-custom', data['uOccupation'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('individualIncome', data['uGincome'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxableIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('householdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('nontaxablehouseholdIncome', data[''], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('monthlyHousingPayment', data['uMortgage'], "text" );}, getRand());
+              if(data['UhasAccount']=='Y'){
+                 $('#savings-acnt-yes_').click();
+               }
+               else{
+                  $('#savings-acnt-no_').click();
+               }
+              window.setTimeout( function(){modifyValue('ssn', data['uSSNumber'], "text" );}, getRand());
+              window.setTimeout( function(){modifyValue('dob', data['uDOB'], "text" );}, getRand());
+
+           }
+            // employed-full-time_
+            // employed-part-time_
+            // employed-self_
+            // unemployed_
+            }
+
+            else if(window.location.href.endsWith('ac-softpull-disclosure')){
+            // alert(15);
+            $("#TermsNConditionCheck").click();
+
+            }
+
+
             }});
        
+        }
+    });
     }
-});
-}
- $(document).ready(function () {
+     $(document).ready(function () {
         
       
         if(window.location.hostname == 'www.discoverpersonalloans.com'){

@@ -284,16 +284,6 @@ function updateVal(val){
                } 
 
 
-
-               if(data['uFinancialAffiliation']=='false'){
-                    $("#hasFinancialAffiliation_false").click(); 
-               }
-               else  if(data['uFinancialAffiliation']=='true'){                  
-                    $("#hasFinancialAffiliation_true").click(); 
-                  window.setTimeout( function(){modifyValue('financialAffiliation_institutionName',data['uFinancialAffiliationName'], "text" );}, getRand());
-               } 
-
-
                // window.setTimeout( function(){ 
                //  $('#hasAdditionalCard').prop('checked', true);
                //  if($('#hasAdditionalCard').is(":checked"))   
@@ -375,7 +365,16 @@ function updateVal(val){
                     indx++;
                 }
             }
-
+			$("#accessibleIncome_accessibleIncm_true").click();                
+            $("#uFinancialAffiliation_true").click(); 
+			
+               if(data['uFinancialAffiliation']=='N'){
+                    $("#hasFinancialAffiliation_false").click(); 
+               }
+               else  if(data['uFinancialAffiliation']=='Y'){                  
+                    $("#hasFinancialAffiliation_true").click(); 
+                  window.setTimeout( function(){modifyValue('financialAffiliation_institutionName',data['uFinancialAffiliationName'], "text" );}, getRand());
+               } 
             
 
 

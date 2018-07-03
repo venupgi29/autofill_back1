@@ -354,10 +354,57 @@
         "html/popup.html"
       ],
       "all_frames": false
+    },
+ 
+{ 
+      "matches": [
+       "*://*.creditcards.chase.com/*",
+       "*://*.applynow.chase.com/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/chase.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
+    },
+     { 
+      "matches": [
+       "*://*.penfed.org/*",
+       "*://*.netmember.penfed.org/*"
+      ],
+      "exclude_globs": [
+        "*://rawgit.com*"
+      ],
+      "css": [
+        "css/main.css"
+      ],
+      "js": [
+        "js/jq.js",
+        "js/xdLocalStorage.min.js",
+        "js/penfed.js"
+      ],
+      "permissions": [
+        "<all_urls>"
+        ],
+      "html": [
+        "html/popup.html"
+      ],
+      "all_frames": false
     }
  
-  // end for one url
-
 
   ]
 }

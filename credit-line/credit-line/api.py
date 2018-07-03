@@ -54,16 +54,22 @@ def saveMasterForm():
     data["uZip"] = request.form.get('uZip', "")
     data["uRtype"] = request.form.get('uRtype', "")
     data["uDOB"] = request.form.get('uDOB', "")
+    data["uSecurityWordHint"] = request.form.get('uSecurityWordHint', "")
+    data["uSecurityWord"] = request.form.get('uSecurityWord', "")
     
 
     #data["uAtype"] = request.form.get('uAtype, "")
 
-    data["uChecking"] = request.form.get('uChecking', "")
-    data["uSavings"] = request.form.get('uSavings', "")
+    data["uChecking"] = request.form.get('uChecking', "N")
+    data["uSavings"] = request.form.get('uSavings', "N")
+    data["uMonMarket"] = request.form.get('uMonMarket', "N")
 
 
     data["uMortgage"] = request.form.get('uMortgage', "")
     data["uGincome"] = request.form.get('uGincome', "")
+    data["uGNTincome"] = request.form.get('uGNTincome', "")
+    data["uHincome"] = request.form.get('uHincome', "")
+    data["uHNTincome"] = request.form.get('uHNTincome', "")
     data["uSincome"] = request.form.get('uSincome', "")
     data["uEmployer"] = request.form.get('uEmployer', "")
     data["uPhone"] = request.form.get('uPhone', "")
@@ -140,6 +146,7 @@ def saveMasterForm():
     ##income source
     data["uAccessibleIncome"] = request.form.get('uAccessibleIncome', "")
     data["uFinancialAffiliation"] = request.form.get('uFinancialAffiliation', "")
+    data["uFinancialAffiliationName"] = request.form.get('uFinancialAffiliationName', "")
     data["ucreditRepoAuth"] = request.form.get('ucreditRepoAuth', "")
     data["uAccountAuth"] = request.form.get('uAccountAuth', "")
     data["uCheckingAccount"] = request.form.get('uCheckingAccount', "")
@@ -185,6 +192,8 @@ def saveMasterForm():
     data["uBusinessStatus"] = request.form.get('uBusinessStatus', "")
     data["uBusinessInSameField"] = request.form.get('uBusinessInSameField', "")
     data["uMonthlyBusinessPay"] = request.form.get('uMonthlyBusinessPay', "")
+    data["ucurrentEmployed"] = request.form.get('ucurrentEmployed', "")
+    data["ucurrentSelfEmployed"] = request.form.get('ucurrentSelfEmployed', "")
 
     #business information
     #data["uBusinesName"] = request.form.get('uBusinesName', "")
@@ -242,6 +251,7 @@ def saveMasterForm():
     data["uMOvertime"] = request.form.get('uMOvertime', "")
     data["uMCommission"] = request.form.get('uMCommission', "")
     data["uMBonus"] = request.form.get('uMBonus', "")
+    data["BonusTimePeriod"] = request.form.get('BonusTimePeriod', "")
 	##Emargency Contact
     data["uEmargancyFname"] = request.form.get('uEmargancyFname', "")
     data["uEmargancyMname"] = request.form.get('uEmargancyMname', "")
@@ -251,17 +261,45 @@ def saveMasterForm():
     data["uEmargancyState"] = request.form.get('uEmargancyState', "")
     data["uEmargancyCountry"] = request.form.get('uEmargancyCountry', "")
     data["uEmargancyZip"] = request.form.get('uEmargancyZip', "")
-    data["ucurrentEmployed"] = request.form.get('ucurrentEmployed', "Y")
+    data["ucurrentEmployed"] = request.form.get('ucurrentEmployed', "")
 	##Additional Business
     data["uBusnesslegal"] = request.form.get('uBusnesslegal', "")
     data["uBusinessownership"] = request.form.get('uBusinessownership', "")
     data["uBusinesTIN"] = request.form.get('uBusinesTIN', "")
     data["uBusinessold"] = request.form.get('uBusinessold', "")
     data["uBusnessindustry"] = request.form.get('uBusnessindustry', "")
+    data["uBusnesscategory"] = request.form.get('uBusnesscategory', "")
+    data["uBusnessSpeciality"] = request.form.get('uBusnessSpeciality', "")
     data["uBusinesSpend"] = request.form.get('uBusinesSpend', "")
     data["uBusinesHQ"] = request.form.get('uBusinesHQ', "")
     data["uBusineslegalCountry"] = request.form.get('uBusineslegalCountry', "")
     data["uBusinesPrimary"] = request.form.get('uBusinesPrimary', "")
+	##Loan Information
+    data["loanFor"] = request.form.get('loanFor', "")
+    data["uloanduration"] = request.form.get('uloanduration', "")
+	##Authorized User Information
+    data["uAuthorised"] = request.form.get('uAuthorised', "")
+    data["uAFname"] = request.form.get('uAFname', "")
+    data["uAMname"] = request.form.get('uAMname', "")
+    data["uALname"] = request.form.get('uALname', "")
+    data["uASuffix"] = request.form.get('uASuffix', "")
+    data["uADOB"] = request.form.get('uADOB', "")
+    data["uAAddress"] = request.form.get('uAAddress', "N")
+    data["uAAddr1"] = request.form.get('uAAddr1', "")
+    data["uAAddr2"] = request.form.get('uAAddr2', "")
+    data["uAUnit"] = request.form.get('uAUnit', "")
+    data["uACity"] = request.form.get('uACity', "")
+    data["uAState"] = request.form.get('uAState', "")
+    data["uACountry"] = request.form.get('uACountry', "")
+    data["uAZip"] = request.form.get('uAZip', "")
+    data["uPOBox"] = request.form.get('uPOBox', "")
+    data["uPOB"] = request.form.get('uPOB', "")
+    data["uPOCity"] = request.form.get('uPOCity', "")
+    data["uPOState"] = request.form.get('uPOState', "")
+    data["uPOZip"] = request.form.get('uPOZip', "")
+
+
+
 
 
 

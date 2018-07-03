@@ -5,10 +5,12 @@
 		    <div class="row">
 				<div class="form-group col-sm-12 col-xs-12">
 					<label > <strong>Select type of accounts you own.</strong></label><br>			
-					<input type="checkbox" class="col-xs-2" name="Checking" value="Checking" id="uChecking">
+					<input type="checkbox" class="col-xs-2" name="uChecking" value="Y" id="uChecking">
 					<label for="uChecking" class="col-sm-2 col-xs-4"> Checking</label>
-					<input type="checkbox" class="col-xs-2" name="Savings" value="Savings" id="uSavings">
+					<input type="checkbox" class="col-xs-2" name="uSavings" value="Y" id="uSavings">
 					<label for="uSavings" class="col-sm-2 col-xs-4"> Savings</label>
+					<input type="checkbox" class="col-xs-2" name="uMonMarket" value="Y" id="uMonMarket">
+					<label for="uMonMarket" class="col-sm-2 col-xs-4"> Money Market</label>
 				</div>
 			</div>
 		    <div class="row">
@@ -57,10 +59,32 @@
 						<input class="form-control " id="uMonAtAddr" name="uMonAtAddr" type="text" placeholder="Months">
 					</div>
 				</div>	
+			</div>	
+			<div class="row">
 				<div class="form-group col-sm-6 col-xs-12">
 					<label for="uGincome" class="col-xs-6">Gross Annual Income <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 					<div class="col-xs-6">
 						<input class="form-control" id="uGincome" name="uGincome" type="text">
+					</div>
+				</div>		
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uGNTincome" class="col-xs-6">How much of that is non-taxable?<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uGNTincome" name="uGNTincome" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="row">			
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uHincome" class="col-xs-6">   Additional Household Income<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uHincome" name="uHincome" type="text">
+					</div>
+				</div>	
+				<div class="form-group col-sm-6 col-xs-12">
+					<label for="uHNTincome" class="col-xs-6">How much of that is non-taxable?<span class="pull-right">:</span></label>
+					<div class="col-xs-6">
+						<input class="form-control" id="uHNTincome" name="uHNTincome" type="text">
 					</div>
 				</div>	
 			</div>
@@ -112,16 +136,199 @@
 					</div>
 				</div>		
 			</div>
+			<hr>
+			<div class="row">						
+				<input type="checkbox" class="col-xs-2" name="uAuthorised" value="Y" id="uAuthorised" onchange="Authorised()">
+				<label for="uAuthorised" class="col-xs-8"> I want to add an Authorized User to this account Now</label>
+			</div>
+			<div class="Aaddress" style="display:none">
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uAFname" class="col-xs-5">First Name<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uAFname" name="uAFname" type="text">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uAMname" class="col-xs-5">Middle Name<span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uAMname" name="uAMname" type="text"  maxlength="1">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uALname" class="col-xs-5">Last Name<span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uALname" name="uALname"  type="text" >
+						</div>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uASuffix" class="col-xs-5">Suffix<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<select class="form-control col-xs-12" name="uASuffix" id="uASuffix">
+								<option value="">
+									---
+								</option>
+								<option value="Jr">
+									Jr
+								</option>
+								<option value="Sr">
+									Sr
+								</option>
+								<option value="I">
+									I
+								</option>
+								<option value="II">
+									II
+								</option>
+								<option value="III">
+									III
+								</option>
+								<option value="IV">
+									IV
+								</option>
+								<option value="V">
+									V
+								</option>
+								<option value="DDM">
+									DDM
+								</option>
+								<option value="DDS">
+									DDS
+								</option>
+								<option value="DO">
+									DO
+								</option>
+								<option value="ESQ">
+									ESQ
+								</option>
+								<option value="MD">
+									MD
+								</option>
+								<option value="RN">
+									RN
+								</option>
+							</select>
+						</div>
+					</div>	
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uADOB" class="col-xs-5">Date of Birth<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control datepicker" id="uADOB" name="uADOB" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<input type="checkbox" class="col-xs-2" name="uAAddress" value="Y" id="uAAddress" onchange="AAddress()">
+					<label for="uAAddress" class="col-xs-8"> Address is the same as primary cardmember.</label>
+				</div>
+				<div class="saddress">
+					<div class="row">
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uAAddr1" class="col-xs-5">Home Address 1<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uAAddr1" name="uAAddr1" type="text">
+							</div>
+						</div>
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uAAddr2" class="col-xs-5">Home Address 2<span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uAAddr2" name="uAAddr2" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uAUnit" class="col-xs-5">Apartment No.<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uAUnit" name="uAUnit" type="text">
+							</div>
+						</div>
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uACity" class="col-xs-5">City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uACity" name="uACity" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uAState" class="col-xs-5">State<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<select id="uAState" name="uAState" class="form-control col-sm-2" >
+									{% include  'states.html' %}
+								</select>
+							</div>
+						</div>
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uACountry" class="col-xs-5">Country <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<select id="uACountry" name="uACountry" class="form-control col-sm-2"  >
+									{% include 'countries.html' %}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6 col-xs-12">
+							<label for="uAZip" class="col-xs-5">Zip code<span style="color:red;fontsize:16px;">*</span> <span class="pull-right">:</span></label>
+							<div class="col-xs-6">
+								<input class="form-control" id="uAZip" name="uAZip" type="text"  maxlength="5">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<input type="checkbox" class="col-xs-2" name="uPOBox" value="Y" id="uPOBox" onchange="POBox()">
+				<label for="uPOBox" class="col-xs-8">I'd like to provide a P.O. Box address</label>
+			</div>
+			<div class="POBox" style="display:none">
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPOB" class="col-xs-5">P.O. Box.<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPOB" name="uPOB" type="text">
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPOCity" class="col-xs-5">City <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPOCity" name="uPOCity" type="text">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPOState" class="col-xs-5">State<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<select id="uPOState" name="uPOState" class="form-control col-sm-2" >
+								{% include  'states.html' %}
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label for="uPOZip" class="col-xs-5">Zip code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
+						<div class="col-xs-6">
+							<input class="form-control" id="uPOZip" name="uPOZip" type="text"  maxlength="5">
+						</div>
+					</div>
+				</div>
+		    </div>
+			<hr>
 		    <div class="row">
 				<div class="row">
 				<label ><strong style="padding:0 10px;"> Source of Income <span style="color:red;fontsize:16px;">*</span></strong> </label>
 				</div>
 				<div class="form-group col-sm-6 col-xs-12">		
-					<input type="checkbox" class="col-xs-2" name="uEmployed" value="Y" id="uEmployed" class="sourceofincome"onchange="Employed()">
+					<input type="checkbox" class="col-xs-2" name="uEmployed" value="Y" id="uEmployed" onchange="Employed()">
 					<label for="uEmployed" class="col-sm-3 col-xs-4"> Employed</label>
-					<input type="checkbox" class="col-xs-2" name="uSelfEmployed" value="Y" id="uSelfEmployed" class="sourceofincome"onchange="SelfEmployed()">
+					<input type="checkbox" class="col-xs-2" name="uSelfEmployed" value="Y" id="uSelfEmployed" onchange="SelfEmployed()">
 					<label for="uSelfEmployed" class="col-sm-3 col-xs-4"> Self Employed</label>
-					<input type="checkbox" class="col-xs-2" name="uOther" value="Y" id="uOther" class="sourceofincome" onchange="Other()">
+					<input type="checkbox" class="col-xs-2" name="uOther" value="Y" id="uOther" onchange="Other()">
 					<label for="uOther" class="col-sm-2 col-xs-4"> Other</label>
 					<input type="checkbox" class="col-xs-2" name="uUnemployed" value="Y" id="uUnemployed" onchange="Unemployed()" >
 					<label for="uUnemployed" class="col-sm-2 col-xs-4"> Unemployed</label>
@@ -185,7 +392,7 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uEmployerPhone" class="col-xs-6">Employer Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">
-							<input class="form-control" id="uEmployerPhone" name="uEmployerPhone" type="text">
+							<input class="form-control" id="uEmployerPhone" name="uEmployerPhone" type="text" maxlength="10">
 						</div>
 					</div>	
 				</div>
@@ -278,7 +485,7 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uEmployerZip" class="col-xs-6">Employer ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">
-							<input class="form-control" id="uEmployerZip" name="uEmployerZip" type="text">
+							<input class="form-control" id="uEmployerZip" name="uEmployerZip" type="text" maxlength="5">
 						</div>
 					</div>	
 				</div>
@@ -375,17 +582,27 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uBusinessPhone" class="col-xs-6">Business Phone <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">
-							<input class="form-control" id="uBusinessPhone" name="uBusinessPhone" type="text">
+							<input class="form-control" id="uBusinessPhone" name="uBusinessPhone" type="text" maxlength="10">
 						</div>
 					</div>	
 				</div>
-				<div class="row">					
+				<div class="row">	
+					<div>
+						<label for="uFinancialAffiliationName">Financial affiliation</label>			
+					</div>
 					<div class="form-group col-sm-6 col-xs-12">
-						<label for="uFinancialAffiliation" class="col-xs-6">Financial affiliation<span class="pull-right">:</span></label>
+						<input class="form-control col-sm-2" value="Y" id="uFinancialAffiliation_true" name="uFinancialAffiliation" type="radio">
+						<label for="uFinancialAffiliation_true" class="col-sm-3">Yes</label>
+						<input class="form-control col-sm-2" id="uFinancialAffiliation_no" value="N" name="uFinancialAffiliation"  type="radio">
+						<label for="uFinancialAffiliation_no" class="col-sm-3">No</label>
+					</div>	
+					<div class="form-group col-sm-6 col-xs-12">
 						<div class="col-xs-6">
-							<input class="form-control" id="uFinancialAffiliation" name="uFinancialAffiliation" type="text" style="display">
+							<input class="form-control" id="uFinancialAffiliationName" name="uFinancialAffiliationName" type="text" style="display">
 						</div>
 					</div>	
+				</div>
+				<div class="row">
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uAccessibleIncome" class="col-xs-6">Accessible Income<span class="pull-right">:</span></label>
 						<div class="col-xs-6">
@@ -429,7 +646,7 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uBusinesZip" class="col-xs-6">ZIP Code <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">
-							<input class="form-control" id="uBusinesZip" name="uBusinesZip" type="text">
+							<input class="form-control" id="uBusinesZip" name="uBusinesZip" type="text" maxlength="5">
 						</div>
 					</div>	
 				</div>
@@ -470,7 +687,7 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uBusinesTIN" class="col-xs-6">Business TAX ID Number (TIN)<span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">
-							<input class="form-control" id="uBusinesTIN" name="uBusinesTIN" type="text">
+							<input class="form-control" id="uBusinesTIN" name="uBusinesTIN" type="text" maxlength="9">
 						</div>
 					</div>					
 					<div class="form-group col-sm-6 col-xs-12">
@@ -492,10 +709,10 @@
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uBusnessindustry" class="col-xs-6">Industry Type <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
 						<div class="col-xs-6">							
-							<select id="uBusnessindustry" name="uBusnessindustry" class="form-control col-sm-2" >
+							<select id="uBusnessindustry" name="uBusnessindustry" class="form-control col-sm-2">
 								<option value=""> -- </option>
 								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
-								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
+							<!--	<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
 								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
 								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
 								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
@@ -511,46 +728,23 @@
 								<option value="PublicAdministration ">Public Administration</option>
 								<option value="RealEstate">Real Estate and Rental and Leasing</option>
 								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
-								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
+								<option value="RetailMerchantTobacco">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
 								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
 								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
 								<option value="Utilities ">Utilities</option>
 								<option value="WholesaleMerchant ">Wholesale Merchant</option>
 								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
-							</select>
+						-->	</select>
 						</div>
 					</div>
 				</div>
-				<div class="row subcatagory" style="display:none;">	
+				<div class="row subcatagory" >	
 					<div class="form-group col-sm-6 col-xs-12">
 						<label for="uBusnesscategory" class="col-xs-6">Category <span style="color:red;fontsize:16px;">*</span><span class="pull-right">:</span></label>
-						<div class="col-xs-6">							
+						<div class="col-xs-6">	
 							<select id="uBusnesscategory" name="uBusnesscategory" class="form-control col-sm-2" >
 								<option value=""> -- </option>
-								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
-								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
-								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
-								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
-								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
-								<option value="FinanceInsurance ">Finance and Insurance</option>
-								<option value="FoodApparel">Food and Apparel Manufacturing</option>
-								<option value="HealthCare">Health Care and Social Assistance</option>
-								<option value="Information">Information, Publishing and Broadcasting</option>
-								<option value="Management">Management of Companies and Enterprises (Holding Companies Managing Other Businesses)</option>
-								<option value="MetalandMachinery">Metal and Machinery Manufacturing</option>
-								<option value="Mining">Mining, Quarrying and Oil and Gas Extraction</option>
-								<option value="OperationalBusiness">Operational Business Services (Administrative, Telemarketing, Facilities &amp; Waste, Security)</option>
-								<option value="Professional">Professional, Scientific and Technical Services (i.e. Tax Preparation, Lawyer, Graphic Design)</option>
-								<option value="PublicAdministration ">Public Administration</option>
-								<option value="RealEstate">Real Estate and Rental and Leasing</option>
-								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
-								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
-								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
-								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
-								<option value="Utilities ">Utilities</option>
-								<option value="WholesaleMerchant ">Wholesale Merchant</option>
-								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
-							</select>
+							</select>						
 						</div>
 					</div>
 					<div class="form-group col-sm-6 col-xs-12">
@@ -558,29 +752,6 @@
 						<div class="col-xs-6">							
 							<select id="uBusnessSpeciality" name="uBusnessSpeciality" class="form-control col-sm-2" >
 								<option value=""> -- </option>
-								<option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
-								<option value="Associations">Associations, Organizations, Non-Profit, Repair Services, Personal Services, and Laundry</option>
-								<option value="Construction">Construction (i.e. Housing Construction, Roofing Contractor, Land Subdivision)</option>
-								<option value="Couriers">Couriers, Storage and Warehousing (i.e. Postal Service, Storage Facility)</option>
-								<option value="EducationalServices">Educational Services (i.e. Elementary School, Exam Prep, Trade School)</option>
-								<option value="FinanceInsurance ">Finance and Insurance</option>
-								<option value="FoodApparel">Food and Apparel Manufacturing</option>
-								<option value="HealthCare">Health Care and Social Assistance</option>
-								<option value="Information">Information, Publishing and Broadcasting</option>
-								<option value="Management">Management of Companies and Enterprises (Holding Companies Managing Other Businesses)</option>
-								<option value="MetalandMachinery">Metal and Machinery Manufacturing</option>
-								<option value="Mining">Mining, Quarrying and Oil and Gas Extraction</option>
-								<option value="OperationalBusiness">Operational Business Services (Administrative, Telemarketing, Facilities &amp; Waste, Security)</option>
-								<option value="Professional">Professional, Scientific and Technical Services (i.e. Tax Preparation, Lawyer, Graphic Design)</option>
-								<option value="PublicAdministration ">Public Administration</option>
-								<option value="RealEstate">Real Estate and Rental and Leasing</option>
-								<option value="RetailMerchant">Retail Merchant (Automobile, Convenience Stores, Pharmacies, Apparel)</option>
-								<option value="RetailMerchant">Retail Merchant (Tobacco, Books, Mail &amp; Internet Shopping, Vending)</option>
-								<option value="Transportation">Transportation and Warehousing (Air, Rail, Boat, Freight)</option>
-								<option value="Travel">Travel, Accommodation, Food Services (i.e. Hotel, Caterer, Restaurant, Bar)</option>
-								<option value="Utilities ">Utilities</option>
-								<option value="WholesaleMerchant ">Wholesale Merchant</option>
-								<option value="Wood">Wood, Plastic, and Chemical Manufacturing</option>
 							</select>
 						</div>
 					</div>
@@ -747,7 +918,25 @@
 		</div>
 	</fieldset>
 <script type="text/javascript">
-
+function POBox()
+{
+	if($('#uPOBox').is(":checked"))
+		$(".POBox").show();
+	else
+		$(".POBox").hide();
+}function AAddress()
+{
+	if($('#uAAddress').is(":checked"))
+		$(".saddress").hide();
+	else
+		$(".saddress").show();
+}function Authorised()
+{
+	if($('#uAuthorised').is(":checked"))
+		$(".Aaddress").show();
+	else
+		$(".Aaddress").hide();
+}
 function Employed()
 {
     if($('#uEmployed').is(":checked"))   
